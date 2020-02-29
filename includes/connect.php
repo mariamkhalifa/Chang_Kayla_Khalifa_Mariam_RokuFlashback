@@ -2,7 +2,7 @@
 
     $db_dsn = array(
         'host' => 'localhost',
-        'dbname' => 'testwithvue',
+        'dbname' => 'testWithVue',
         'charset' => 'utf8',
     );
     
@@ -10,7 +10,7 @@
 
     // Set up connection credentials
     $db_user = 'root';
-    $db_pass = '';
+    $db_pass = 'root';
 
     $pdo = new PDO($dsn, $db_user, $db_pass);
 

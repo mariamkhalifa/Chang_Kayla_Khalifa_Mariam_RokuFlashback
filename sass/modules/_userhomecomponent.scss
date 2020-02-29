@@ -1,0 +1,101 @@
+.fs-video { width: 100% }
+
+.media-container { background: darken($dark-bg, 15%)}
+.media-container:first-of-type { padding-bottom: 1em; }
+.media-container:last-of-type { padding-left: 0; padding-right: 0; }
+
+// top left media details
+.media-title { 
+    font-size: 1.5em; 
+    padding-top: 1em;
+    font-weight: bolder; 
+}
+
+.media-details { font-size: 1.2em; padding: 0.5em 0; }
+
+.media-year, .media-time { font-size: 1em; }
+.media-year { display: block; float: right; }
+
+.side-nav { background: darken($dark-bg, 9%) }
+
+// left hand pad list -> audio, film television
+.media-type { 
+    list-style-type: none;
+    margin-bottom: 0;
+    
+    li { 
+        padding: 1rem;
+        cursor: pointer;
+        display: inline-block;
+        width: 33%;
+        text-align: center;
+
+        span:first-of-type {  
+            font-size: 2rem; 
+            color: white;
+        }
+    }
+
+    li:hover span:first-of-type { color: $roku-purple }
+}
+
+// genre filter links
+
+.media-genres {
+    list-style-type: none;
+    background: darken($dark-bg, 10%);
+    margin: 0;
+    padding: 1em 1em 1em 1.5em;
+
+    li { 
+        display: inline-block;
+
+        a {
+            font-size: 1rem;
+            color: white;
+            text-decoration: none;
+        }
+        
+        a:hover { color: $roku-purple; }
+    }
+
+    li::after {
+        content: "|";
+        padding: 0 8px 0 13px;
+        color: rgba(255,255,255,0.5);
+    }
+
+    li:last-of-type::after {
+        content: none;
+    }
+}
+
+// media thumbnails
+.media-info {
+    padding-left: 0;
+    padding-right: 0;
+
+    > div { padding: 0 10px; }
+}
+
+.media-thumb {
+    height: 140px;
+    margin: 0.7em;
+}
+
+.audio-thumb { height: 150px; }
+
+.audio-wrapper {
+    background: $dark-bg;
+
+    img { max-width: 85%; display: block; margin: 0 auto; padding: 4% }
+
+}
+
+audio {
+    width: 70%;
+    margin: 0 13%;
+    position: absolute;
+    bottom: 12%;
+    opacity: 0.8;
+}

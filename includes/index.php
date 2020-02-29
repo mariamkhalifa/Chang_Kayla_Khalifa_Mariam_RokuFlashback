@@ -1,9 +1,8 @@
 <?php
+    require('functions.php');
 
-require('functions.php');
+    if (isset($_GET['user'])) {
+        $user = getUser($pdo);
+    }
 
-if (isset($_GET['user'])) {
-    $user = getUser($pdo);
-}
-
-echo json_encode($user);
+    echo json_encode($user);

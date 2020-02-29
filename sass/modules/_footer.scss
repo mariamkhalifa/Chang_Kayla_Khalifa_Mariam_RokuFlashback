@@ -1,0 +1,28 @@
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    // line-height: 60px;
+    background-color: $dark-bg;
+
+    p { 
+        display: inline-block;
+        padding-left: 1em;
+        @include vertical-align();
+    }
+
+	ul { 
+        list-style-type: none;
+        @include vertical-align();
+        margin-bottom: 0;
+        max-width: 95px;
+
+		li {
+			font-size: 2.5em;
+			display: inline-block;
+			margin-right: 0.4em;
+			color: rgba(255, 255, 255, 0.3);
+		}
+	}
+}

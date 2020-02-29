@@ -1,0 +1,66 @@
+// 768 is tablet @ portait
+
+@media screen and (min-width: 768px) {
+    .user-message {
+        font-size: 2.5rem;
+    }
+
+    .media-title {
+        font-size: 1.25em;
+    }
+
+    .media-year { float: none; }
+
+    .media-container:first-of-type { padding-bottom: 0; }
+
+    .media-thumb { height: 165px; }
+
+    footer ul { max-width: none; }
+}
+
+@media (min-width: 992px) {
+    .display-4 {
+        font-size: 3.5rem;
+    }
+
+    .thumb-wrapper { 
+        max-height: 350px; 
+        overflow-x: auto; 
+    }
+    
+    .media-title {
+        font-size: 1.75em;
+    }
+
+    .media-type { 
+        list-style-type: none;
+        margin-bottom: 0;
+        
+        li { 
+            padding: 1rem;
+            border-bottom: thin solid $dark-bg;
+            cursor: pointer;
+            display: block;
+            width: auto;
+            text-align: left;
+
+            span:first-of-type { 
+                padding-right: 1rem; 
+                font-size: 2rem; 
+                color: white;
+            }
+    
+            span:last-of-type { 
+                display: inline-block !important;
+                text-transform: uppercase;
+                font-size: 1.2em;
+                position: relative;
+                top: -6px;
+            }
+        }
+    
+        li:hover span:first-of-type { color: $roku-purple }
+    
+        li:last-of-type { border-bottom: none; }
+    }
+}

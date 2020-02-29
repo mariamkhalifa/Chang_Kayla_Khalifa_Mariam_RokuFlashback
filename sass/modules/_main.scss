@@ -1,0 +1,73 @@
+* { border: 0; padding: 0; margin: 0; }
+
+html { position: relative; min-height: 100%; }
+
+body {
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	background-color: black;
+	color: white;
+	margin-bottom: 100px;
+	background: url(../images/gunmetal.jpg) repeat;
+}
+
+a {
+	color: #00B7FF;
+	text-decoration: none;
+}
+
+header {
+	background-color:$dark-bg;
+	padding: 12px 14px;
+	position: fixed;
+	z-index: 500;
+	width: 100%; 
+
+	span {
+		margin-left: 15px;
+		font-weight: bolder;
+		font-size: 1.5em;
+		text-transform: uppercase;
+		position: relative;
+		top: 5px;
+	}
+}
+
+nav:not(.side-nav) {
+	ul {
+		right: 3em;
+		list-style-type: none;
+		margin-bottom: 0;
+
+		li {
+			display: inline-block;
+			font-size: 1.75em;
+			padding: 0 0.2em;
+			cursor: pointer;
+		}
+	}
+}
+
+.toast {
+	position: absolute;
+	right: 1em;
+	top: 4.25rem;
+	z-index: 200;
+	color: #333;
+	min-width: 175px;
+
+	.toast-body {
+		span { margin-left: 0.8rem; position: relative; top: -2px; font-weight: bolder; }
+	}
+}
+
+.fa-exclamation-triangle { color: red; font-size: 1.5em; }
+
+.container > div:first-of-type { margin-top: 53px; }
+
+// resets for small sizes
+
+.display-4 {
+	font-size: 2.25rem;
+}
+
+.user-message { text-align: center; font-size: 2rem; }
