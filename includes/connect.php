@@ -2,7 +2,7 @@
 
     $db_dsn = array(
         'host' => 'localhost',
-        'dbname' => 'testWithVue',
+        'dbname' => 'db_roku_movies',
         'charset' => 'utf8',
     );
     
@@ -10,7 +10,7 @@
 
     // Set up connection credentials
     $db_user = 'root';
-    $db_pass = 'root';
+    $db_pass = '';
 
     $pdo = new PDO($dsn, $db_user, $db_pass);
 
