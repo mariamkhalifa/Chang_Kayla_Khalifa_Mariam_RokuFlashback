@@ -1,0 +1,40 @@
+.header {
+    @include row;
+    background-color: #666;
+}
+
+.roku-logo {
+    @include col;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    margin-left: auto;
+    img {
+        width: 80px; 
+    }
+}
+
+.flashback-logo {
+    @include col;
+    align-items: center;
+    justify-content: center;
+    font-family: $flashback-font;
+    font-size: 2.5em;
+    margin-right: 20px;
+    margin-left: auto;
+}
+
+.burger {
+    @include col;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    order: -1;
+    cursor: pointer;
+}
+
+.fa-bars {
+    margin: 20px 15px;
+    font-size: 2em;
+    
+}

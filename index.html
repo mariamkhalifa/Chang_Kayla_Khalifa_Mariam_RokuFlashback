@@ -19,10 +19,13 @@
 
 <body>
   <main id="app">
-    <header>
-      <img class="roku-logo" src="images/roku_logo.svg" alt="roku logo">
-      <img class="flashback-logo" src="images/flashback_logo.svg" alt="flashback logo">
-      <i class="fas fa-bars"></i>
+    <header class="header">
+      <!-- <img class="roku-logo" src="images/roku_logo.svg" alt="roku logo"> -->
+      <!-- <img class="flashback-logo" src="images/flashback_logo.svg" alt="flashback logo"> -->
+      <!-- <h1 class="roku-logo">Roku</h1> -->
+      <router-link to="/" class="roku-logo"><img src="images/roku.svg" alt="Roku logo"></router-link>
+      <span class="flashback-logo">Flashback</span>
+      <div class="burger"><i class="fas fa-bars"></i></div>
     </header>
   
     <router-view/>

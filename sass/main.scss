@@ -1,3 +1,67 @@
 @import '_vars';
-@import 'modules/_footer';
+@import 'modules/_header';
+@import 'modules/_landing';
+@import 'modules/_signup';
 @import 'modules/_login';
+@import 'modules/_footer';
+
+html, body {
+    height: 100%;
+}
+
+img, embed, object, video {
+	max-width: 100%;
+	height: auto;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: $copy-font;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 1.7em;
+}
+
+button {
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+    @include row;
+}
+
+input {
+    padding: 12px 45px 12px 15px;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}
+
+.button {
+    font-weight: bold;
+    padding: 20px 80px;
+}
+
+.fill {
+    background-color: #999;
+}
+
+.border {
+    border: solid 1px #999;
+}
+
+.button-input {
+    font-weight: bold;
+    padding: 14px 80px;
+}
