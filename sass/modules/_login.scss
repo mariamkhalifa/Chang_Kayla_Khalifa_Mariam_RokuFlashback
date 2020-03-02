@@ -1,0 +1,31 @@
+.login-wrapper {
+    @include col;
+    align-items: center;
+    h1 {
+        margin-top: 100px;
+    }
+}
+
+.login-form {
+    @include col;
+    align-items: center;
+    margin-top: 40px;
+    button {
+        position: relative;
+        margin-top: 40px
+    }
+}
+
+.arrow {
+    position: absolute;
+    right: 10px;
+}
+
+.not-member {
+    @include row;
+    margin-top: 100px;
+    .link {
+        margin-left: 10px;
+        text-transform: uppercase;
+    }
+}

@@ -2,9 +2,11 @@ export default {
     template: `
         <section class="landing-wrapper">
             <h1 class="hidden">Landing Page</h1>
-            <div></div>
-            <router-link to="/signup">Sign Up</router-link>
-            <router-link to="/login">Sign In</router-link>
+            <div class="buttons-wrapper">
+                <router-link to="/signup" class="link button fill">Sign Up</router-link>
+                <p>or</p>
+                <router-link to="/login" class="link button border">Sign In</router-link>
+            </div>    
         </section>
     `
 

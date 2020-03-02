@@ -1,0 +1,12 @@
+.landing-wrapper {
+    
+    p {
+        margin: 20px 0;
+    }
+}
+
+.buttons-wrapper {
+    @include col;
+    align-items: center;
+    margin-top: 350px;
+}
