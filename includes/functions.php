@@ -1,16 +1,32 @@
 <?php
+    require('connect.php');
 
-require('connect.php');
 
-function getUser($conn) {
-    $getUser = 'SELECT * FROM users';
-    $runQuery = $conn->query($getUser);
+    function getUsers($conn) {
 
-    $result = array();
+        $getUsers = 'SELECT * FROM tbl_users';
+        $runQuery = $conn->query($getUsers);
 
-    while($row = $runQuery->fetch(PDO::FETCH_ASSOC)) {
-        $result[] = $row;
+        $result = array();
+
+        while($row = $runQuery->fetch(PDO::FETCH_ASSOC)) {
+            $result[] = $row;
+        }
+
+        return $result;
     }
 
-    return $result;
-}
+
+    function getMovies($conn) {
+
+        $getMovies = 'SELECT * FROM tbl_movies';
+        $runQuery = $conn->query($getMovies);
+
+        $result = array();
+
+        while($row = $runQuery->fetch(PDO::FETCH_ASSOC)) {
+            $result[] = $row;
+        }
+
+        return $result;
+    }
