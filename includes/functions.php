@@ -1,17 +1,30 @@
 <?php
     require('connect.php');
 
-    function getUser($conn) {
 
-        $liveuser = $_POST["username"];
+    function getUsers($conn) {
 
-        $getUser = 'SELECT * FROM users WHERE uname="' .$liveuser. '"';
-        $runQuery = $conn->query($getUser);
+        $getUsers = 'SELECT * FROM tbl_users';
+        $runQuery = $conn->query($getUsers);
 
         $result = array();
 
         while($row = $runQuery->fetch(PDO::FETCH_ASSOC)) {
-            // push each row of data into our arry to make it easy to iterate over
+            $result[] = $row;
+        }
+
+        return $result;
+    }
+
+
+    function getMovies($conn) {
+
+        $getMovies = 'SELECT * FROM tbl_movies';
+        $runQuery = $conn->query($getMovies);
+
+        $result = array();
+
+        while($row = $runQuery->fetch(PDO::FETCH_ASSOC)) {
             $result[] = $row;
         }
 

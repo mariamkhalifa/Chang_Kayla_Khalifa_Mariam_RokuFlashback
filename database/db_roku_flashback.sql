@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 29, 2020 at 12:59 AM
+-- Generation Time: Mar 01, 2020 at 09:14 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_roku_movies`
+-- Database: `db_roku_flashback`
 --
 
 -- --------------------------------------------------------
@@ -158,9 +158,10 @@ INSERT INTO `tbl_tv` (`id`, `title`, `poster`, `year`, `storyline`, `trailer`, `
 DROP TABLE IF EXISTS `tbl_users`;
 CREATE TABLE IF NOT EXISTS `tbl_users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(250) NOT NULL,
+  `username` varchar(250) NOT NULL,
+  `password` varchar(20) NOT NULL,
   `avatar` varchar(250) NOT NULL,
-  `age` int(11) NOT NULL,
+  `permissions` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
@@ -168,9 +169,9 @@ CREATE TABLE IF NOT EXISTS `tbl_users` (
 -- Dumping data for table `tbl_users`
 --
 
-INSERT INTO `tbl_users` (`id`, `name`, `avatar`, `age`) VALUES
-(1, 'Mari', 'mari.jpg', 34),
-(2, 'Fares', 'fares.jpg', 6);
+INSERT INTO `tbl_users` (`id`, `username`, `password`, `avatar`, `permissions`) VALUES
+(1, 'Mari', '111', 'avatar1.jpg', 5),
+(2, 'kayla', '111', 'avatar2.jpg', 5);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

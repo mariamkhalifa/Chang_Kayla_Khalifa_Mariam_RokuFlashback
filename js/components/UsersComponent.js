@@ -5,7 +5,7 @@ export default {
             <ul class="users">
                 <h2>Who's Watching?</h2>
                 <li v-for="user in users">
-                    <router-link to="/adminPass">{{user.name}}</router-link>
+                    <router-link to="/adminPass">{{user.username}}</router-link>
                     <i class="fas fa-arrow-right"></i>
                 </li>
                 <li>
@@ -30,10 +30,34 @@ export default {
 
     data: function() {
         return {
-            users: [ 
-                {name: "Kayla"},
-                {name: "Mariam"}
-            ],
+            // users: [ 
+            //     {name: "Kayla"},
+            //     {name: "Mariam"}
+            // ],
+
+            users : []
+        }
+    },
+
+    created: function() {
+        this.fetchUsers();
+    },
+
+    methods: {
+        fetchUsers() {
+            console.log('fetch users here');
+
+            const url = './includes/index.php?users=true';
+
+            fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                this.users = data;
+            })
+            .catch((err) => console.log(err))
         }
     }
+
+    
 }

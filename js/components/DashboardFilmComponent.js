@@ -1,6 +1,7 @@
 export default {
     props: {
-        src: String
+        poster: String,
+        title: String
     },
 
     template: `
@@ -11,10 +12,10 @@ export default {
                 <h2>Keep  Watching</h2>
                 <a href="#">See All</a>
                 <div class="films-wrapper">
-                    <video v-for="film in films" 
-                    class="film">
-                        <source :src="'video/' + film.src">
-                    </video>
+                    <img v-for="movie in movies"
+                    class="film poster"
+                    :src="'images/' + movie.poster"
+                    :alt="movie.title + ' poster'">
                 </div>
             </section>
 
@@ -22,10 +23,10 @@ export default {
                 <h2>Recommended</h2>
                 <a href="#">See All</a>
                 <div class="films-wrapper">
-                    <video v-for="film in films" 
-                    class="film">
-                        <source :src="'video/' + film.src">
-                    </video>
+                    <img v-for="movie in movies"
+                    class="film poster"
+                    :src="'images/' + movie.poster"
+                    :alt="movie.title + ' poster'">
                 </div>
             </section>
 
@@ -46,11 +47,33 @@ export default {
 
     data: function() {
         return {
-            films: [
-                {src: "avengers.mp4"},
-                {src: "forceawakens.mp4"},
-                {src: "strangerthings.mp4"},
-            ]
+            // films: [
+            //     {src: "avengers.mp4"},
+            //     {src: "forceawakens.mp4"},
+            //     {src: "strangerthings.mp4"},
+            // ]
+
+            movies: []
+        }
+    },
+
+    created: function() {
+        this.fetchMovies();
+    },
+
+    methods: {
+        fetchMovies() {
+            console.log('fetch movies here');
+
+            const url = './includes/index.php?movies=true';
+
+            fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                this.movies = data;
+            })
+            .catch((err) => console.log(err))
         }
     }
 
