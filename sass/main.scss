@@ -83,3 +83,23 @@ input {
     font-weight: bold;
     padding: 14px 80px;
 }
+
+@media screen and (min-width: 500px) {
+    .button {
+        padding: 20px 180px;
+    }
+
+    input {
+        padding: 12px 245px 12px 15px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .button {
+        padding: 20px 270px;
+    }
+
+    input {
+        padding: 12px 425px 12px 15px;
+    }
+}

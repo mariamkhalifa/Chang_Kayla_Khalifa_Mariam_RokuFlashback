@@ -49,3 +49,19 @@
         text-transform: uppercase;
     }
 }
+
+@media screen and (min-width: 500px) {
+    .avatars {
+        img {
+            width: 120px;
+        }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .avatars {
+        img {
+            width: 180px;
+        }
+    }
+}
