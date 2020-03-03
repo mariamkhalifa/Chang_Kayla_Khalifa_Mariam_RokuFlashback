@@ -3,6 +3,10 @@
 @import 'modules/_landing';
 @import 'modules/_signup';
 @import 'modules/_login';
+@import 'modules/_users';
+@import 'modules/_dashboardFilm';
+@import 'modules/_dashboardTv';
+@import 'modules/_dashboardMusic';
 @import 'modules/_footer';
 
 html, body {
@@ -23,6 +27,20 @@ body {
 h1 {
     font-weight: bold;
     font-size: 1.7em;
+}
+
+h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.1em;
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }
 
 button {
