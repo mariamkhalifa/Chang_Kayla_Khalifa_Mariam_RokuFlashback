@@ -1,0 +1,64 @@
+.users-wrapper {
+    margin-top: 80px;
+    margin-left: 20px;
+}
+
+.users {
+    width: 100%;
+    h2 {
+        margin-bottom: 40px;
+    }
+    li {
+        margin-top: 30px;
+        @include row;
+        img {
+            width: 80px;
+        }
+    }
+}
+
+.user-name {
+    margin-left: 15px;
+    align-self: center;
+}
+
+.user-arrow {
+    margin-left: auto;
+    margin-right: 30px;
+    align-self: center;
+}
+
+.user-plus {
+    margin-left: auto;
+    margin-right: 30px;
+    align-self: center;
+    
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    border: 1px solid white;
+    @include row;
+    span {
+        align-self: center;
+        font-size: 1.5em;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.logout-link {
+    @include row;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    .fa-sign-out-alt {
+        font-size: 1.2em;
+    }
+    .link {
+        margin-left: 20px;
+        text-transform: uppercase;
+        font-size: .8em;
+        align-self: center;
+    }
+}
+
+

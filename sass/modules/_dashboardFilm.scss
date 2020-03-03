@@ -1,0 +1,87 @@
+.keep-watching-wrapper {
+    margin-top: 60px;
+    margin-right: 20px;
+    margin-left: 20px;
+    
+}
+
+.keep-watching-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    a {
+        justify-self: end;
+        align-self: start;
+        text-transform: uppercase;
+        font-size: .9em;
+        transition: all 1s ease;
+    }
+    a:hover {
+        opacity: .5;
+    }
+}
+
+.films-wrapper {
+    @include row;
+    width: 3000px;
+    max-height: 500px;
+    overflow-x: hidden;
+    margin-top: 25px;
+}
+
+.film-poster {
+    width: 200px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+.film-poster:hover {
+    opacity: .5;
+}
+
+.recommended-wrapper {
+    margin-top: 40px;
+    margin-right: 20px;
+    margin-left: 20px;
+    
+}
+
+.recommended-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    a {
+        justify-self: end;
+        align-self: start;
+        text-transform: uppercase;
+        font-size: .9em;
+        transition: all 1s ease;
+    }
+    a:hover {
+        opacity: .5;
+    }
+}
+
+.bottom-nav {
+    margin-top: 40px;
+    @include row;
+    justify-content: space-evenly;
+    li {
+        transition: all 1s ease;
+        padding: 25px 0;
+        background-color: #666;
+        width: 33.333%;
+        @include col;
+        align-items: center;
+        p {
+            text-align: center;
+            margin-top: 8px;
+        }
+    }
+    li:hover {
+        opacity: .5;
+        border: white 1px solid;
+    }
+    li:active {
+        border: white 1px solid;
+    }
+}
