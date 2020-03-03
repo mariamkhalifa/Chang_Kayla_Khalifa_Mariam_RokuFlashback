@@ -15,23 +15,9 @@ respectively.
 * **SASS/CSS3**
 * **JavaScript**
 * **PHP**
-**Vue.js**
-**MySQL**
-**Gulp**
-
-
-## Packages to Install (Developers)
-
-If you run the `cat package.json` command, you'll see that you need these packages to run the program:
-
-* NPM
-* Gulp Dependencies
-
-To install: `npm install`
-
-## Workspaces (Designers)
-* Adobe XD
-* Adobe Illustrator
+* **Vue.js**
+* **MySQL**
+* **Gulp**
 
 ## Authors
 
