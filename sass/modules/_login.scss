@@ -27,5 +27,9 @@
     .link {
         margin-left: 10px;
         text-transform: uppercase;
+        transition: .5s ease all;
+    }
+    .link:hover {
+        opacity: .5;
     }
 }
