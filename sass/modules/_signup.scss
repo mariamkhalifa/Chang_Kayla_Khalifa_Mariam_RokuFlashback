@@ -19,7 +19,12 @@
     margin-top: 20px;
     img {
         width: 80px;
+        height: 80px;
         cursor: pointer;
+        background-color: white;
+        border-radius: 10px;
+        border: 3px solid black;
+        border-bottom: 10px solid black;
     }
 }
 
@@ -47,6 +52,10 @@
     .link {
         margin-left: 10px;
         text-transform: uppercase;
+        transition: all ease .5s;
+    }
+    .link:hover {
+        opacity: .5;
     }
 }
 
@@ -54,6 +63,7 @@
     .avatars {
         img {
             width: 120px;
+            height:120px;
         }
     }
 }
@@ -62,6 +72,7 @@
     .avatars {
         img {
             width: 180px;
+            height: 180px;
         }
     }
 }

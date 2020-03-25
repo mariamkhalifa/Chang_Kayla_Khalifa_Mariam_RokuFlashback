@@ -72,6 +72,9 @@
         width: 33.333%;
         @include col;
         align-items: center;
+        img {
+            width: 40px;
+        }
         p {
             text-align: center;
             margin-top: 8px;

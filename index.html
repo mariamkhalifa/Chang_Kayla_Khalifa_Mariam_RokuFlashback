@@ -20,12 +20,58 @@
 <body>
   <main id="app">
     <header class="header">
-      <!-- <img class="roku-logo" src="images/roku_logo.svg" alt="roku logo"> -->
-      <!-- <img class="flashback-logo" src="images/flashback_logo.svg" alt="flashback logo"> -->
-      <!-- <h1 class="roku-logo">Roku</h1> -->
       <router-link to="/" class="roku-logo"><img src="images/roku.svg" alt="Roku logo"></router-link>
-      <span class="flashback-logo">Flashback</span>
-      <div class="burger"><i class="fas fa-bars"></i></div>
+      <router-link to="/" class="flashback-logo"><img src="images/flashback.svg" alt="Flashback logo"></router-link>
+      <div v-on:click="expandBurger" class="burger" ><img :class="{'rotated':burger.isExpanded}" src="images/burger.svg" alt="burger menu icon"></div>
+      <ul class="nav" :class="{ 'expanded' : burger.isExpanded }">
+        <div v-on:click="closeBurger" class="close-burger">
+          <i class="fas fa-times"></i>
+          <span class="nav-link">Close</span>
+        </div>
+        
+        <li>
+          <router-link to="/dashboardFilm" class="link">
+            <i class="fas fa-home"></i>
+            <span class="nav-link">Home</span>
+          </router-link>
+        </li>
+        <li v-if="admin">
+          <router-link to="/pofile" class="link">
+            <i class="fas fa-user"></i>
+            <span class="nav-link">Profile</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/search" class="link">
+            <i class="fas fa-search"></i>
+            <span class="nav-link">Search</span>
+          </router-link>
+        </li>
+        <li v-if="admin">
+          <router-link to="/settings" class="link">
+            <i class="fas fa-cog"></i>
+            <span class="nav-link">Settings</span>
+          </router-link>
+        </li>
+        <li v-if="kids">
+          <router-link to="/laguage" class="link">
+            <i class="fas fa-globe"></i>
+            <span class="nav-link">Language</span>
+          </router-link>
+        </li>
+        <li v-if="kids">
+          <router-link to="/captions" class="link">
+            <i class="fas fa-closed-captioning"></i>
+            <span class="nav-link">Captions</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/legal" class="link">
+            <i class="far fa-copyright"></i>
+            <span class="nav-link">Legal</span>
+          </router-link>
+        </li>
+      </ul>
     </header>
   
     <router-view/>

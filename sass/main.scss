@@ -19,7 +19,7 @@ img, embed, object, video {
 }
 
 body {
-    background-color: black;
+    background-color: $grey;;
     color: white;
     font-family: $copy-font;
 }
@@ -72,11 +72,11 @@ input {
 }
 
 .fill {
-    background-color: #999;
+    background-color: $orange;
 }
 
 .border {
-    border: solid 1px #999;
+    border: solid 1px $light-grey;
 }
 
 .button-input {

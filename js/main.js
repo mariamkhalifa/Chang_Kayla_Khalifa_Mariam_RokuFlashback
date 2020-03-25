@@ -26,16 +26,27 @@ import DashboardMusicComponent from "./components/DashboardMusicComponent.js"
   const vm = new Vue({
 
     data: {
-      administrator: false,
+      admin: false,
 
-      burger: false,
+      kids: false,
 
-      user: [],
+      burger: {
+        isExpanded: false,
+      }
+
 
     },
 
     methods: {
-      
+        expandBurger() {
+          console.log('expanded');
+          this.burger.isExpanded = (this.burger.isExpanded) ? false : true ;
+        },
+
+        closeBurger() {
+          console.log('closed');
+          this.burger.isExpanded = (this.burger.isExpanded) ? false : true;
+      },
 
         
     },

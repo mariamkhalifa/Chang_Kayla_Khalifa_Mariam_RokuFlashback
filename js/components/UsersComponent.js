@@ -24,9 +24,9 @@ export default {
                     <router-link to="/dashboardFamily" class="user-arrow"><i class="fas fa-arrow-right"></i></router-link>
                 </li>
                 <li>
-                    <router-link to="/addUser"><img src="images/add_user.svg" alt="add user icon"></router-link>
+                    <router-link to="/addUser"><img class="add-user-icon" src="images/avatar5.svg" alt="add user icon"></router-link>
                     <router-link to="/addUser" class="user-name"><h3 >Create User</h3></router-link>
-                    <router-link to="/addUser" class="user-arrow" class="user-plus"><span>+</span></router-link>
+                    <router-link to="/addUser" class="user-arrow"><span>+</span></router-link>
                 </li>
             </ul>
             <div class="logout-link">
