@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Mar 01, 2020 at 09:14 PM
+-- Host: localhost:8889
+-- Generation Time: Mar 30, 2020 at 03:19 PM
 -- Server version: 5.7.26
--- PHP Version: 7.2.18
+-- PHP Version: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -28,13 +26,11 @@ SET time_zone = "+00:00";
 -- Table structure for table `tbl_arating`
 --
 
-DROP TABLE IF EXISTS `tbl_arating`;
-CREATE TABLE IF NOT EXISTS `tbl_arating` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_arating` (
+  `id` int(11) NOT NULL,
   `name` varchar(125) NOT NULL,
-  `description` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+  `description` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_arating`
@@ -53,16 +49,14 @@ INSERT INTO `tbl_arating` (`id`, `name`, `description`) VALUES
 -- Table structure for table `tbl_audio`
 --
 
-DROP TABLE IF EXISTS `tbl_audio`;
-CREATE TABLE IF NOT EXISTS `tbl_audio` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_audio` (
+  `id` int(11) NOT NULL,
   `title` varchar(150) NOT NULL,
   `poster` varchar(75) NOT NULL,
   `audio` varchar(75) NOT NULL,
   `year` varchar(5) NOT NULL,
-  `artist` varchar(250) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+  `artist` varchar(250) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_audio`
@@ -81,13 +75,11 @@ INSERT INTO `tbl_audio` (`id`, `title`, `poster`, `audio`, `year`, `artist`) VAL
 -- Table structure for table `tbl_comments`
 --
 
-DROP TABLE IF EXISTS `tbl_comments`;
-CREATE TABLE IF NOT EXISTS `tbl_comments` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_comments` (
+  `id` int(11) NOT NULL,
   `auth` varchar(125) NOT NULL,
   `copy` text NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -96,17 +88,15 @@ CREATE TABLE IF NOT EXISTS `tbl_comments` (
 -- Table structure for table `tbl_movies`
 --
 
-DROP TABLE IF EXISTS `tbl_movies`;
-CREATE TABLE IF NOT EXISTS `tbl_movies` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_movies` (
+  `id` int(11) NOT NULL,
   `title` varchar(125) NOT NULL,
   `poster` varchar(75) NOT NULL,
   `year` varchar(5) NOT NULL,
   `runtime` varchar(25) NOT NULL,
   `storyline` text NOT NULL,
-  `trailer` varchar(75) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+  `trailer` varchar(75) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_movies`
@@ -125,18 +115,16 @@ INSERT INTO `tbl_movies` (`id`, `title`, `poster`, `year`, `runtime`, `storyline
 -- Table structure for table `tbl_tv`
 --
 
-DROP TABLE IF EXISTS `tbl_tv`;
-CREATE TABLE IF NOT EXISTS `tbl_tv` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_tv` (
+  `id` int(11) NOT NULL,
   `title` varchar(125) NOT NULL,
   `poster` varchar(75) NOT NULL,
   `year` varchar(25) NOT NULL,
   `storyline` text NOT NULL,
   `trailer` varchar(75) NOT NULL,
   `runtime` varchar(50) NOT NULL,
-  `episodes` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+  `episodes` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_tv`
@@ -155,24 +143,101 @@ INSERT INTO `tbl_tv` (`id`, `title`, `poster`, `year`, `storyline`, `trailer`, `
 -- Table structure for table `tbl_users`
 --
 
-DROP TABLE IF EXISTS `tbl_users`;
-CREATE TABLE IF NOT EXISTS `tbl_users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbl_users` (
+  `id` int(11) NOT NULL,
   `username` varchar(250) NOT NULL,
   `password` varchar(20) NOT NULL,
   `avatar` varchar(250) NOT NULL,
-  `permissions` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  `permissions` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_users`
 --
 
 INSERT INTO `tbl_users` (`id`, `username`, `password`, `avatar`, `permissions`) VALUES
-(1, 'Mari', '111', 'avatar1.jpg', 5),
-(2, 'kayla', '111', 'avatar2.jpg', 5);
-COMMIT;
+(1, 'Mari', '111', 'avatar1.svg', 5),
+(2, 'kayla', '111', 'avatar2.svg', 5);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tbl_arating`
+--
+ALTER TABLE `tbl_arating`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_audio`
+--
+ALTER TABLE `tbl_audio`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_comments`
+--
+ALTER TABLE `tbl_comments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_movies`
+--
+ALTER TABLE `tbl_movies`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_tv`
+--
+ALTER TABLE `tbl_tv`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tbl_arating`
+--
+ALTER TABLE `tbl_arating`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tbl_audio`
+--
+ALTER TABLE `tbl_audio`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tbl_comments`
+--
+ALTER TABLE `tbl_comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_movies`
+--
+ALTER TABLE `tbl_movies`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tbl_tv`
+--
+ALTER TABLE `tbl_tv`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
