@@ -7,7 +7,7 @@ export default {
 
     template: `
         <section class="add-user-wrapper">
-            <h2>Add New User</h2>
+            <h2 class="main-heading">Add New User</h2>
 
             <div class="avatar-wrapper">
                 <h3>Choose Your Avatar</h3>
@@ -29,7 +29,7 @@ export default {
                 <input id="conf-pass" name="conf-pass" type="" value="" placeholder="Confirm Password" required>
                 <button type="submit" class="button fill button-input">
                     <span>Enter</span>
-                    <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="button-arrow"><i class="fas fa-arrow-right"></i></div>
                 </button>
             </form>
 

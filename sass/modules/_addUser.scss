@@ -13,6 +13,11 @@
     margin-top: 100px;
     @include col;
     align-items: center;
+    h3 {
+        font-size: 2em;
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
 }
 
 .avatars {
@@ -38,18 +43,10 @@
     width: 100%;
     h3 {
         margin-bottom: 10px;
+        font-size: 2em;
+        margin-bottom: 30px;
+        font-weight: bold;
     }
-    button {
-        position: relative;
-        margin-top: 40px;
-        @include col;
-        align-items: center;
-    }
-}
-
-.arrow {
-    position: absolute;
-    right: 10px;
 }
 
 // .already-member {

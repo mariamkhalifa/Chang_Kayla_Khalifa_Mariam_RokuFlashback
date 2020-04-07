@@ -4,7 +4,7 @@ export default {
     template: `
         <section class="login-wrapper">
             <div></div>
-            <h1>Sign In</h1>
+            <h2 class="main-heading">Sign In</h2>
             <form class="login-form">
                 <p class="form-msg">{{ formmsg }}</p>
                 <label for="username" class="hidden">Username</label>
@@ -13,7 +13,7 @@ export default {
                 <input v-model="input.password" id="password" name="password" type="password" value="" placeholder="password" required>
                 <button @click.prevent="login" type="submit" class="button fill button-input">
                     <span>Enter</span>
-                    <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="button-arrow"><i class="fas fa-arrow-right"></i></div>
                 </button>
                 <!-- <div class="not-member">
                     <p>Not a member?</p>
