@@ -1,13 +1,23 @@
 @import '_vars';
-@import 'modules/_header';
-@import 'modules/_landing';
-@import 'modules/_addUser';
-@import 'modules/_login';
-@import 'modules/_users';
-@import 'modules/_dashboardFilm';
-@import 'modules/_dashboardTv';
-@import 'modules/_dashboardMusic';
-@import 'modules/_footer';
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+  
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+ol, ul {
+    list-style: none;
+}
+
 
 html, body {
     height: 100%;
@@ -26,20 +36,6 @@ body {
 
 h1, h2 {
     font-family: $Breamcatcher;
-}
-
-h1 {
-    font-weight: bold;
-    font-size: 3em;
-}
-
-h2 {
-    font-size: 2.5em;
-    font-weight: bold;
-}
-
-h3 {
-    font-size: 1.8em;
 }
 
 a {
@@ -68,6 +64,7 @@ input {
 
 ::placeholder {
     font-family: $copy-font;
+    text-transform: capitalize;
 }
 
 .hidden {
@@ -77,6 +74,11 @@ input {
 .link {
     text-decoration: none;
     color: white;
+}
+
+.main-heading {
+    font-family: $Breamcatcher;
+    font-size: 3em;
 }
 
 .button {
@@ -97,5 +99,23 @@ input {
 .button-input {
     font-weight: bold;
     padding: 14px 0;
+    position: relative;
+    margin-top: 40px;
+    @include col;
+    align-items: center;
 }
+
+.button-arrow {
+    position: absolute;
+    right: 10px;
+}
+
+@import 'modules/_header';
+@import 'modules/_addUser';
+@import 'modules/_login';
+@import 'modules/_users';
+@import 'modules/_dashboardFilm';
+@import 'modules/_dashboardTv';
+@import 'modules/_dashboardMusic';
+@import 'modules/_footer';
 

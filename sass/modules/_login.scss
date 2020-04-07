@@ -1,7 +1,10 @@
 .login-wrapper {
     @include col;
     align-items: center;
-    h1 {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 80px;
+    h2 {
         margin-top: 100px;
     }
 }
@@ -10,29 +13,21 @@
     @include col;
     align-items: center;
     margin-top: 40px;
-    button {
-        position: relative;
-        margin-top: 40px
-    }
+    width: 100%;
 }
 
-.arrow {
-    position: absolute;
-    right: 10px;
-}
-
-.not-member {
-    @include row;
-    margin-top: 100px;
-    .link {
-        margin-left: 10px;
-        text-transform: uppercase;
-        transition: .5s ease all;
-    }
-    .link:hover {
-        opacity: .5;
-    }
-}
+// .not-member {
+//     @include row;
+//     margin-top: 100px;
+//     .link {
+//         margin-left: 10px;
+//         text-transform: uppercase;
+//         transition: .5s ease all;
+//     }
+//     .link:hover {
+//         opacity: .5;
+//     }
+// }
 
 .form-msg {
     border-top: 20px;

@@ -6,15 +6,18 @@
 
 .users {
     width: 100%;
-    h2 {
-        margin-bottom: 40px;
+    h3 {
+        margin-bottom: 60px;
+        font-family: $copy-font;
+        font-size: 2em;
+        font-weight: bold;
     }
     li {
-        margin-top: 30px;
+        margin-top: 40px;
         @include row;
         img {
-            width: 80px;
-            height: 80px;
+            width: 40em;
+            height: 10em;
             background-color: white;
             border-radius: 10px;
             border: 3px solid black;
@@ -28,11 +31,11 @@
 }
 
 .user-name {
-    margin-left: 15px;
+    margin-top: 10px;
     align-self: center;
     text-transform: uppercase;
     font-family: $Breamcatcher;
-    font-size: 2em;
+    font-size: 3em;
 }
 
 .user-arrow {
@@ -45,17 +48,17 @@
     margin-left: auto;
     margin-right: 30px;
     align-self: center;
-    font-size: 1.5em;
+    font-size: 1.3em;
     width: 20px;
     height: 20px;
     border-radius: 20px;
     border: 1px solid white;
-    @include row;
+    @include col;
+    align-items: center;
+    justify-content: center;
     span {
-        align-self: center;
         font-size: 1.5em;
-        margin-left: auto;
-        margin-right: auto;
+        margin-top: 2px;
     }
 }
 
