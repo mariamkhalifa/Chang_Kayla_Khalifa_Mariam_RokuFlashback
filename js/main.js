@@ -20,6 +20,16 @@ import router from './components/Router.js'
 
     },
 
+    created: function() { 
+      if(localStorage.getItem('cachedUser')) {
+        let user = JSON.parse(localStorage.getItem('cachedUser'));
+        this.authenticated = true;
+        this.$router.push({ name: 'userhome', params: { currentuser : user } });
+      } else {
+        this.$router.push({ name: 'login' });
+      }
+    },
+
     methods: {
       navigateToHome() {
         this.$router.push({ name: 'userhome', params: { users: this.user } })
@@ -34,6 +44,10 @@ import router from './components/Router.js'
         this.$router.push({ name: 'login' });
         this.authenticated = false;
         this.burger.isExpanded = false;
+
+        if(localStorage.getItem('cachedUser')) {
+          localStorage.removeItem('cachedUser');
+        }
       },
 
       expandBurger() {
