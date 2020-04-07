@@ -1,14 +1,16 @@
 export default {
+    name: 'adduser',
+    
     props: {
         img: String
     },
 
     template: `
-        <section class="signup-wrapper">
-            <h1>Sign Up</h1>
+        <section class="add-user-wrapper">
+            <h2>Add New User</h2>
 
             <div class="avatar-wrapper">
-                <h2>Choose Your Avatar</h2>
+                <h3>Choose Your Avatar</h3>
                 <div class="avatars">
                     <img v-for="avatar in avatars"
                     class="avatar"
@@ -17,8 +19,8 @@ export default {
                 </div>
             </div>
 
-            <form class="signup-form" action="" method="post">
-                <h2>Your Acount nfo</h2>
+            <form class="add-user-form" action="" method="post">
+                <h3>Your Acount Info</h3>
                 <label for="username" class="hidden">username</label>
                 <input id="username" name="username" type="text" value="" placeholder="Username" required>
                 <label for="password" class="hidden">password</label>
@@ -31,10 +33,10 @@ export default {
                 </button>
             </form>
 
-            <div class="already-member">
+            <!-- <div class="already-member">
                 <p>Already a member?</p>
                 <router-link to="/login" class="link">Sign In</router-link>
-            </div>
+            </div> -->
         </section>
     `,
 
