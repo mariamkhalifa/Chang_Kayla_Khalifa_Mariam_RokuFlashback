@@ -22,7 +22,7 @@
 
 .films-wrapper {
     @include row;
-    width: 3000px;
+    width: 100vw;
     max-height: 500px;
     overflow-x: hidden;
     margin-top: 25px;

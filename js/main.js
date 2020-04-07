@@ -1,9 +1,7 @@
-// import the login component first (actually all components here, but we're starting with login)
-import LandingComponent from "./components/LandingComponent.js"
-import SignUpComponent from "./components/SignUpComponent.js"
+
 import LoginComponent from "./components/LoginComponent.js"
 import UsersComponent from "./components/UsersComponent.js"
-import AdminPassComponent from "./components/AdminPassComponent.js"
+import AddUserComponent from "./components/AddUserComponent.js"
 import DashboardFilmComponent from "./components/DashboardFilmComponent.js"
 import DashboardTVComponent from "./components/DashboardTVComponent.js"
 import DashboardMusicComponent from "./components/DashboardMusicComponent.js"
@@ -12,40 +10,53 @@ import DashboardMusicComponent from "./components/DashboardMusicComponent.js"
 (() => {
   let router = new VueRouter({
     routes: [
-      { path: '/', name: "landing", component: LandingComponent },
-      { path: '/signUp', name: "signUp", component: SignUpComponent },
+      { path: '/', redirect: { name: "login" }},
       { path: '/login', name: "login", component: LoginComponent },
       { path: '/users', name: "users", component: UsersComponent },
-      { path: '/adminPass', name: "adminPass", component: AdminPassComponent },
-      { path: '/dashboardFilm', name: "dashboardFilm", component: DashboardFilmComponent },
-      { path: '/dashboardTV', name: "dashboardTV", component: DashboardTVComponent },
-      { path: '/dashboardMusic', name: "dashboardMusic", component: DashboardMusicComponent },
+      { path: '/adduser', name: "adduser", component: AddUserComponent },
+      { path: '/dashboardfilm', name: "dashboardfilm", component: DashboardFilmComponent },
+      { path: '/dashboardtv', name: "dashboardtv", component: DashboardTVComponent },
+      { path: '/dashboardmusic', name: "dashboardmusic", component: DashboardMusicComponent },
     ]
   });
 
   const vm = new Vue({
 
     data: {
+      authenticated: false,
+
       admin: false,
 
       kids: false,
 
       burger: {
         isExpanded: false,
-      }
+      },
 
+      users: [],
 
     },
 
     methods: {
-        expandBurger() {
-          console.log('expanded');
-          this.burger.isExpanded = (this.burger.isExpanded) ? false : true ;
-        },
+      setAuthenticated(status, data) {
+        this.authenticated = status;
+        this.user = data;
+      },
 
-        closeBurger() {
-          console.log('closed');
-          this.burger.isExpanded = (this.burger.isExpanded) ? false : true;
+      logout() {
+        this.$router.push({ name: 'login' });
+        this.authenticated = false;
+        this.burger.isExpanded = false;
+      },
+
+      expandBurger() {
+        console.log('expanded');
+        this.burger.isExpanded = (this.burger.isExpanded) ? false : true ;
+      },
+
+      closeBurger() {
+        console.log('closed');
+        this.burger.isExpanded = (this.burger.isExpanded) ? false : true;
       },
 
         
@@ -53,6 +64,15 @@ import DashboardMusicComponent from "./components/DashboardMusicComponent.js"
 
     router
   }).$mount("#app");
+
+  router.beforeEach((to, from, next) => {
+
+    if(vm.authenticated == false) {
+      next("{ name: 'login' }");
+    } else {
+      next();
+    }
+  });
 
   
 })();

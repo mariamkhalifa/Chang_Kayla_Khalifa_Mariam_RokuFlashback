@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Roku FlashBack</title>
-
+  <link rel="stylesheet" href="https://use.typekit.net/its0ltk.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/main.css">
 
@@ -20,8 +20,8 @@
 <body>
   <main id="app">
     <header class="header">
-      <router-link to="/" class="roku-logo"><img src="images/roku.svg" alt="Roku logo"></router-link>
-      <router-link to="/" class="flashback-logo"><img src="images/flashback.svg" alt="Flashback logo"></router-link>
+      <router-link :to="{ name: 'login' }" class="roku-logo"><img src="images/roku.svg" alt="Roku logo"></router-link>
+      <router-link :to="{ name: 'login' }" class="flashback-logo"><img src="images/flashback.svg" alt="Flashback logo"></router-link>
       <div v-on:click="expandBurger" class="burger" ><img :class="{'rotated':burger.isExpanded}" src="images/burger.svg" alt="burger menu icon"></div>
       <ul class="nav" :class="{ 'expanded' : burger.isExpanded }">
         <div v-on:click="closeBurger" class="close-burger">
@@ -29,52 +29,56 @@
           <span class="nav-link">Close</span>
         </div>
         
-        <li>
-          <router-link to="/dashboardFilm" class="link">
+        <li v-if="authenticated">
+          <router-link :to="{ name: 'userhome' }" class="link">
             <i class="fas fa-home"></i>
             <span class="nav-link">Home</span>
           </router-link>
         </li>
         <li v-if="admin">
-          <router-link to="/pofile" class="link">
+          <router-link :to="{ name: 'userprofile' }" class="link">
             <i class="fas fa-user"></i>
             <span class="nav-link">Profile</span>
           </router-link>
         </li>
         <li>
-          <router-link to="/search" class="link">
+          <a href="#" class="link">
             <i class="fas fa-search"></i>
             <span class="nav-link">Search</span>
-          </router-link>
+          </a>
         </li>
         <li v-if="admin">
-          <router-link to="/settings" class="link">
+          <a href="#" class="link">
             <i class="fas fa-cog"></i>
             <span class="nav-link">Settings</span>
-          </router-link>
+          </a>
         </li>
         <li v-if="kids">
-          <router-link to="/laguage" class="link">
+          <a href="#" class="link">
             <i class="fas fa-globe"></i>
             <span class="nav-link">Language</span>
-          </router-link>
+          </a>
         </li>
         <li v-if="kids">
-          <router-link to="/captions" class="link">
+          <a href="#" class="link">
             <i class="fas fa-closed-captioning"></i>
             <span class="nav-link">Captions</span>
-          </router-link>
+          </a>
         </li>
         <li>
-          <router-link to="/legal" class="link">
+          <a href="#" class="link">
             <i class="far fa-copyright"></i>
             <span class="nav-link">Legal</span>
-          </router-link>
+          </a>
+        </li>
+        <li v-if="authenticated" @click="logout" class="link">
+          <i class="fas fa-sign-out-alt"></i>
+          <span class="nav-link">Logout</span>
         </li>
       </ul>
     </header>
   
-    <router-view/>
+    <router-view @authenticated="setAuthenticated"/>
   </main>
 
   <footer>

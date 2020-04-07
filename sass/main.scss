@@ -1,7 +1,7 @@
 @import '_vars';
 @import 'modules/_header';
 @import 'modules/_landing';
-@import 'modules/_signup';
+@import 'modules/_addUser';
 @import 'modules/_login';
 @import 'modules/_users';
 @import 'modules/_dashboardFilm';
@@ -24,18 +24,22 @@ body {
     font-family: $copy-font;
 }
 
+h1, h2 {
+    font-family: $Breamcatcher;
+}
+
 h1 {
     font-weight: bold;
-    font-size: 1.7em;
+    font-size: 3em;
 }
 
 h2 {
-    font-size: 1.2em;
+    font-size: 2.5em;
     font-weight: bold;
 }
 
 h3 {
-    font-size: 1.1em;
+    font-size: 1.8em;
 }
 
 a {
@@ -46,15 +50,24 @@ a {
 button {
     border: none;
     color: white;
+    font-family: $Breamcatcher;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 2.2em;
     cursor: pointer;
     @include row;
 }
 
 input {
-    padding: 12px 45px 12px 15px;
+    padding: 12px 0;
     margin-top: 10px;
+    width: 100%;
+    font-family: $copy-font;
+    font-size: 1.2em;
+    padding-left: 10px;
+}
+
+::placeholder {
+    font-family: $copy-font;
 }
 
 .hidden {
@@ -68,7 +81,9 @@ input {
 
 .button {
     font-weight: bold;
-    padding: 20px 80px;
+    padding: 20px 0;
+    padding-left: 10px;
+    width: 100%;
 }
 
 .fill {
@@ -81,25 +96,6 @@ input {
 
 .button-input {
     font-weight: bold;
-    padding: 14px 80px;
+    padding: 14px 0;
 }
 
-@media screen and (min-width: 500px) {
-    .button {
-        padding: 20px 180px;
-    }
-
-    input {
-        padding: 12px 245px 12px 15px;
-    }
-}
-
-@media screen and (min-width: 800px) {
-    .button {
-        padding: 20px 270px;
-    }
-
-    input {
-        padding: 12px 425px 12px 15px;
-    }
-}

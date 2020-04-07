@@ -1,6 +1,7 @@
 .users-wrapper {
     margin-top: 80px;
     margin-left: 20px;
+    margin-bottom: 80px;
 }
 
 .users {
@@ -29,6 +30,9 @@
 .user-name {
     margin-left: 15px;
     align-self: center;
+    text-transform: uppercase;
+    font-family: $Breamcatcher;
+    font-size: 2em;
 }
 
 .user-arrow {
@@ -41,6 +45,7 @@
     margin-left: auto;
     margin-right: 30px;
     align-self: center;
+    font-size: 1.5em;
     width: 20px;
     height: 20px;
     border-radius: 20px;
@@ -54,20 +59,20 @@
     }
 }
 
-.logout-link {
-    @include row;
-    margin-top: 80px;
-    margin-bottom: 40px;
-    .fa-sign-out-alt {
-        font-size: 1.2em;
-    }
-    .link {
-        margin-left: 20px;
-        text-transform: uppercase;
-        font-size: .8em;
-        align-self: center;
-    }
-}
+// .logout-link {
+//     @include row;
+//     margin-top: 80px;
+//     margin-bottom: 40px;
+//     .fa-sign-out-alt {
+//         font-size: 1.2em;
+//     }
+//     .link {
+//         margin-left: 20px;
+//         text-transform: uppercase;
+//         font-size: .8em;
+//         align-self: center;
+//     }
+// }
 
 @media screen and (min-width: 450px) {
     .users-wrapper {
