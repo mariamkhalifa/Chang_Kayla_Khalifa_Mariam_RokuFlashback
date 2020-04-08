@@ -3,7 +3,6 @@ export default {
 
     template: `
         <section class="login-wrapper">
-            <div></div>
             <h2 class="main-heading">Sign In</h2>
             <form class="login-form">
                 <p class="form-msg">{{ formmsg }}</p>

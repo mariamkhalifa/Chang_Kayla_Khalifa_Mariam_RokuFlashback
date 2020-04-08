@@ -58,17 +58,19 @@
 .expanded {
     @include col;
     //width: 50%;
-    background-color: #666;
+    background-color: $black;
     //padding: 40px 40px 100vh 30px;
     padding-bottom: 100vh;
     position: absolute;
     li {
         @include row;
         padding: 25px 70px 25px 30px;
+        background-color: $black;
         transition: all ease .5s;
     }
     li:hover {
         border: .5px solid rgba($color: #999, $alpha: .3);
+        transform: scale(1.05);
     }
     .nav-link {
         margin-left: 20px;

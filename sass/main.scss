@@ -71,6 +71,15 @@ input {
     display: none;
 }
 
+.sr-only {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
 .link {
     text-decoration: none;
     color: white;
@@ -110,13 +119,22 @@ input {
     right: 10px;
 }
 
+.avatar {
+    background-color: white;
+    border-radius: 10px;
+    border: 3px solid black;
+    border-bottom: 10px solid black;
+}
+
 @import 'modules/_header';
 @import 'modules/_addUser';
 @import 'modules/_login';
 @import 'modules/_users';
+@import 'modules/_mediaNav';
 @import 'modules/_userhome';
 @import 'modules/_dashboardFilm';
 @import 'modules/_dashboardTv';
 @import 'modules/_dashboardMusic';
+@import 'modules/_mediaInfo';
 @import 'modules/_footer';
 

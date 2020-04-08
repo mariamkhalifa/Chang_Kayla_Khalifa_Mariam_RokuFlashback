@@ -1,17 +1,27 @@
+import MediaNav from './MediaNav.js'
+
 export default {
     name: 'userhome',
 
     props: ['currentuser'],
 
     template: `
-    <section class="userhome-wrapper">
-        <h2 class="hidden">User Home</h2>
+    <section class="user-home">
+        <h2 class="sr-only">User Home</h2>
 
-        <div class="user-home-wrapper">
-            <h3>Welcome {{ currentuser.username }}</h3>
+        <router-link :to="{ name: 'users' }"><i class="fas fa-arrow-left"></i></router-link>
+
+        <div class="user-info-wrapper">
+            <h3 class="main-heading">{{ currentuser.username }}</h3>
             <img class="user-home-avatar avatar" :src="'images/' + currentuser.avatar" alt="user avatar">
         </div>
 
+        <medianav/>
+
     </section>
-    `
+    `,
+
+    components: {
+        medianav: MediaNav
+    }
 }

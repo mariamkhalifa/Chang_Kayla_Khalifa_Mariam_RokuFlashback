@@ -1,13 +1,20 @@
+.film-comp-wrapper {
+    max-width: 100vw; 
+    overflow: hidden;
+}
+
 .keep-watching-wrapper {
     margin-top: 60px;
-    margin-right: 20px;
-    margin-left: 20px;
-    
+    margin-left: 40px;
 }
 
 .keep-watching-top {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    h3 {
+        font-weight: bold;
+        font-size: 2em;
+    }
     a {
         justify-self: end;
         align-self: start;
@@ -24,15 +31,20 @@
     @include row;
     width: 100vw;
     max-height: 500px;
-    overflow-x: hidden;
-    margin-top: 25px;
+    overflow-x: scroll;
+    margin-top: 40px;
 }
 
 .film-poster {
+    height: auto;
     width: 200px;
     margin-right: 20px;
     cursor: pointer;
-    transition: all 1s ease;
+    transition: all .5s ease;
+}
+
+.film-poster:last-of-type {
+    margin-right: 0;
 }
 
 .film-poster:hover {
@@ -40,15 +52,17 @@
 }
 
 .recommended-wrapper {
-    margin-top: 40px;
-    margin-right: 20px;
-    margin-left: 20px;
-    
+    margin-top: 80px;
+    margin-left: 40px;
 }
 
 .recommended-top {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    h3 {
+        font-weight: bold;
+        font-size: 2em;
+    }
     a {
         justify-self: end;
         align-self: start;
@@ -61,30 +75,3 @@
     }
 }
 
-.bottom-nav {
-    margin-top: 80px;
-    @include row;
-    justify-content: space-evenly;
-    li {
-        transition: all 1s ease;
-        padding: 25px 0;
-        background-color: #666;
-        width: 33.333%;
-        @include col;
-        align-items: center;
-        img {
-            width: 40px;
-        }
-        p {
-            text-align: center;
-            margin-top: 8px;
-        }
-    }
-    li:hover {
-        opacity: .5;
-        border: white 1px solid;
-    }
-    li:active {
-        border: white 1px solid;
-    }
-}

@@ -1,76 +1,46 @@
+import FilmComponent from './FilmComponent.js'
+import MediaNav from './MediaNav.js'
+
 export default {
     name: 'dashboardfilm',
     
-    props: {
-        poster: String,
-        title: String
-    },
+    // props: {
+    //     poster: String,
+    //     title: String
+    // },
 
     template: `
         <section class="film-comp-wrapper">
-            <h1 class="hidden">Film Dashboard</h1>
+            <h2 class="sr-only">Film Dashboard</h2>
 
             <section class="keep-watching-wrapper">
                 <div class="keep-watching-top">
-                    <h2>Keep  Watching</h2>
-                    <a href="#">See All</a>
+                    <h3>Keep  Watching</h3>
+                    <!-- <a href="#">See All</a> -->
                 </div>
                 <div class="films-wrapper">
-                    <img v-for="movie in movies"
-                    class="film-poster"
-                    :src="'images/' + movie.poster"
-                    :alt="movie.title + ' poster'">
+                    <film v-for="(movie, index) in movies" 
+                    :livefilm="movie" :key="index"/>
                 </div>
             </section>
 
             <section class="recommended-wrapper">
                 <div class="recommended-top">
-                    <h2>Recommended</h2>
-                    <a href="#">See All</a>
+                    <h3>Recommended</h3>
+                    <!-- <a href="#">See All</a> -->
                 </div>
                 <div class="films-wrapper">
-                    <img v-for="movie in movies"
-                    class="film-poster"
-                    :src="'images/' + movie.poster"
-                    :alt="movie.title + ' poster'">
+                    <film v-for="(movie, index) in movies" 
+                    :livefilm="movie" :key="index"/>
                 </div>
             </section>
 
-            <ul class="bottom-nav">
-                <h1 class="hidden">Bottom Navigation</h1>
-                <li>
-                    <router-link :to="{ name: 'dashboardfilm' }">
-                        <!-- <i class="fas fa-film  fa-4x"></i> -->
-                        <img src="images/film.svg" alt="film icon">
-                        <p>Film</p>
-                    </router-link>
-                </li>
-                <li>
-                    <router-link :to="{ name: 'dashboardtv' }">
-                        <!-- <i class="fas fa-tv fa-4x"></i> -->
-                        <img src="images/tv.svg" alt="tv icon">
-                        <p>Tv</p>
-                    </router-link>
-                </li>
-                <li>
-                    <router-link :to="{ name: 'dashboardmusic' }">
-                        <!-- <i class="fas fa-music fa-4x"></i> -->
-                        <img src="images/music.svg" alt="music icon">
-                        <p>Music</p>
-                    </router-link>
-                </li>
-            </ul>
+            <medianav/>
         </section>
     `,
 
     data: function() {
         return {
-            // films: [
-            //     {src: "avengers.mp4"},
-            //     {src: "forceawakens.mp4"},
-            //     {src: "strangerthings.mp4"},
-            // ]
-
             movies: []
         }
     },
@@ -81,7 +51,7 @@ export default {
 
     methods: {
         fetchMovies() {
-            console.log('fetch movies here');
+            //console.log('fetch movies here');
 
             const url = './includes/index.php?movies=true';
 
@@ -93,6 +63,11 @@ export default {
             })
             .catch((err) => console.log(err))
         }
+    },
+
+    components: {
+        film: FilmComponent,
+        medianav: MediaNav
     }
 
 
