@@ -5,6 +5,7 @@ import AddUserComponent from "./AddUserComponent.js"
 import DashboardFilmComponent from "./DashboardFilmComponent.js"
 import DashboardTVComponent from "./DashboardTVComponent.js"
 import DashboardMusicComponent from "./DashboardMusicComponent.js"
+import MediaInfoComponent from "./MediaInfoComponent.js"
 
 
 let router = new VueRouter({
@@ -17,6 +18,7 @@ routes: [
     { path: '/dashboardfilm', name: "dashboardfilm", component: DashboardFilmComponent },
     { path: '/dashboardtv', name: "dashboardtv", component: DashboardTVComponent },
     { path: '/dashboardmusic', name: "dashboardmusic", component: DashboardMusicComponent },
+    { path: '/mediainfo', name: "mediainfo", component: MediaInfoComponent, props: true },
 ]
 });
 

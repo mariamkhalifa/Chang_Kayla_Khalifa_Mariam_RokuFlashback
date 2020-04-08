@@ -1,0 +1,97 @@
+.media-details-wrapper {
+    @include col;
+}
+
+.media-details {
+    @include col;
+    margin: 20px 50px 80px 20px;
+}
+
+.media-year {
+    font-size: .9em;
+}
+
+.media-title {
+    margin-top: 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.media-storyline {
+    margin-top: 20px;
+    line-height: 1.2em;
+}
+
+.genre-rating-wrapper {
+    @include row;
+    margin-top: 20px;
+}
+
+.genre-card, .rating-card {
+    background-color: $orange;
+    width: 100px;
+    height: 36px;
+    @include col;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    border-radius: 20px;
+    font-size: .9em;
+}
+
+.genre-card {
+    margin-right: 10px;
+}
+
+.rate-form {
+    margin-top: 30px;
+    label {
+        font-weight: bold;
+    }
+    select {
+        border: .5px $orange solid;
+        padding: 5px;
+        background-color: $grey;
+        color: white;
+    }
+    input { 
+        width: 50px;
+        font-size: .8em;
+        background-color: $orange;
+        border: none;
+        color: white;
+        height: 20px;
+        border-radius: 5px;
+    }
+}
+
+.share-btns {
+    margin-top: 20px;
+    h4 { font-weight: bold; }
+}
+
+.btn-row {
+    @include row;
+    align-items: end;
+    margin-top: 10px;
+}
+
+.facebook-share {
+    width: 30px;
+    margin-right: 20px;
+}
+
+.twitter-share {
+    width: 40px;
+    margin-top: 3px;
+}
+
+.comments {
+    margin-top: 40px;
+    h4 {
+        font-weight: bold;
+    }
+}
+
+
+

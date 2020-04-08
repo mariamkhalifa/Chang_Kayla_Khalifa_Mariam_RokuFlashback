@@ -13,9 +13,8 @@ respectively.
 ## Built with
 * **HTML5**
 * **SASS/CSS3**
-* **JavaScript**
-* **PHP**
 * **Vue.js**
+* **PHP**
 * **MySQL**
 * **Gulp**
 

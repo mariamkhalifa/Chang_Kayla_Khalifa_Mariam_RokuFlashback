@@ -5,7 +5,7 @@ export default {
 
     template: `
     <li>
-        <div @click="navToUserHome"><img :src="'images/' + liveuser.avatar" alt="user avatar"></div>
+        <div @click="navToUserHome"><img class="avatar" :src="'images/' + liveuser.avatar" alt="user avatar"></div>
         <div @click="navToUserHome" class="user-name"><h4>{{liveuser.username}}</h4></div>
         <div @click="navToUserHome" class="user-arrow"><i class="fas fa-arrow-right"></i></div>
     </li>

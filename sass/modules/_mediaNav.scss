@@ -1,0 +1,27 @@
+.media-nav {
+    margin-top: 80px;
+    @include row;
+    justify-content: space-evenly;
+    li {
+        transition: all 1s ease;
+        padding: 25px 0;
+        background-color: #666;
+        width: 33.333%;
+        @include col;
+        align-items: center;
+        img {
+            width: 40px;
+        }
+        p {
+            text-align: center;
+            margin-top: 8px;
+        }
+    }
+    li:hover {
+        opacity: .5;
+        border: white 1px solid;
+    }
+    li:active {
+        border: white 1px solid;
+    }
+}

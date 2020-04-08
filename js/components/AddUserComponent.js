@@ -13,7 +13,7 @@ export default {
                 <h3>Choose Your Avatar</h3>
                 <div class="avatars">
                     <img v-for="avatar in avatars"
-                    class="avatar"
+                    class="add-user-avatar avatar"
                     :src="'images/' + avatar.img" 
                     :alt="avatar.img">
                 </div>

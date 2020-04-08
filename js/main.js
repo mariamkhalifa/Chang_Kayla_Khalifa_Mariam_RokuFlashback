@@ -31,10 +31,6 @@ import router from './components/Router.js'
     },
 
     methods: {
-      navigateToHome() {
-        this.$router.push({ name: 'userhome', params: { users: this.user } })
-      },
-
       setAuthenticated(status, data) {
         this.authenticated = status;
         this.user = data;
