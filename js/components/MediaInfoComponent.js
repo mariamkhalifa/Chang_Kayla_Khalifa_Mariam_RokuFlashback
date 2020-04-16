@@ -7,22 +7,30 @@ export default {
     <section class="media-details-wrapper">
         <h3 class="sr-only">Media Details</h3>
 
-        <video class="video" controls>
+        <video v-if="currentmedia.video" class="video" controls>
             <source :src="'video/' + currentmedia.trailer">
         </video>
+
+        <img v-if="currentmedia.audio" class="audio-info-poster" :src="'images/' + currentmedia.poster" :alt="currentmedia.title">
+
+        <audio v-if="currentmedia.audio" class="audio" controls>
+            <source :src="'audio/' + currentmedia.audiosrc">
+        </audio>
 
         <div class="media-details">
 
             <p class="media-year">{{ currentmedia.year }}</p>
             
-            <h4 class="media-title">{{ currentmedia.title }}</h4>
+            <h4 class="media-title">{{ currentmedia.title }}<span v-if="currentmedia.audio"> - {{ currentmedia.artist }}</span></h4>
             
-            <p class="media-storyline">{{ currentmedia.storyline }}</p>
+            <p v-if="currentmedia.video" class="media-storyline">{{ currentmedia.storyline }}</p>
             
-            <div class="genre-rating-wrapper">
+            <div v-if="currentmedia.video" class="genre-rating-wrapper">
                 <div class="genre-card"><p>Genre</p></div>
                 <div class="rating-card"><p>Rating</p></div>
             </diV>
+
+            <div v-if="currentmedia.audio" class="genre-card"><p>Genre</p></div>
             
             <form class="rate-form">
                 <label for="rating">Rate</label>

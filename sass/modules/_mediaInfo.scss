@@ -2,6 +2,17 @@
     @include col;
 }
 
+.audio-info-poster {
+    align-self: center;
+    margin-top: 40px;
+}
+
+.audio {
+    align-self: center;
+    margin-top: 20px;
+    width: 90%;
+}
+
 .media-details {
     @include col;
     margin: 20px 50px 80px 20px;
@@ -15,6 +26,7 @@
     margin-top: 30px;
     font-size: 1.5em;
     font-weight: bold;
+    
 }
 
 .media-storyline {
