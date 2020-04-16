@@ -1,4 +1,4 @@
-import FilmComponent from './FilmComponent.js'
+import MediaComponent from './MediaComponent.js'
 import MediaNav from './MediaNav.js'
 
 export default {
@@ -20,7 +20,7 @@ export default {
                 </div>
                 <div class="films-wrapper">
                     <film v-for="(movie, index) in movies" 
-                    :livefilm="movie" :key="index"/>
+                    :livemedia="movie" :key="index"/>
                 </div>
             </section>
 
@@ -31,7 +31,7 @@ export default {
                 </div>
                 <div class="films-wrapper">
                     <film v-for="(movie, index) in movies" 
-                    :livefilm="movie" :key="index"/>
+                    :livemedia="movie" :key="index"/>
                 </div>
             </section>
 
@@ -66,7 +66,7 @@ export default {
     },
 
     components: {
-        film: FilmComponent,
+        film: MediaComponent,
         medianav: MediaNav
     }
 
