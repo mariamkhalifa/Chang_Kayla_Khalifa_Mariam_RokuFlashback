@@ -2,6 +2,20 @@
     require('connect.php');
 
 
+    function getAll($conn, $tbl) {
+
+        $get_all_query = 'SELECT * FROM ' . $tbl;
+        $run_query = $conn->query($get_all_query);
+
+        $result = array();
+
+        while($row = $run_query->fetch(PDO::FETCH_ASSOC)) {
+            $result[] = $row;
+        }
+
+        return $result;
+    }
+
     function getUsers($conn) {
 
         $getUsersQuery = 'SELECT * FROM tbl_users';

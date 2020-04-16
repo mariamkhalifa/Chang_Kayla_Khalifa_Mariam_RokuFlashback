@@ -4,12 +4,15 @@
 
     if(isset($_GET['users'])) {
         $result = getUsers($pdo);
-        //echo json_encode($users);
     }
 
     if(isset($_GET['movies'])) {
         $result = getMovies($pdo);
-        //echo json_encode($movies);
+    }
+
+    if(isset($_GET['tv'])) {
+        $tbl_tv = 'tbl_tv';
+        $result = getAll($pdo, $tbl_tv);
     }
 
     if(isset($_GET['add_user'])) {
