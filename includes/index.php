@@ -15,6 +15,11 @@
         $result = getAll($pdo, $tbl_tv);
     }
 
+    if(isset($_GET['music'])) {
+        $tbl_audio = 'tbl_audio';
+        $result = getAll($pdo, $tbl_audio);
+    }
+
     if(isset($_GET['add_user'])) {
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
