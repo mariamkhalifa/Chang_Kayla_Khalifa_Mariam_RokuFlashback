@@ -12,7 +12,7 @@ export default {
     ` ,
 
     created: function() {
-        if (this.liveuser.avatar === null || this.liveuser.avatar === "null") {
+        if (this.liveuser.avatar === null || this.liveuser.avatar === "") {
             this.liveuser.avatar = "avatar1.svg";
         }
     },

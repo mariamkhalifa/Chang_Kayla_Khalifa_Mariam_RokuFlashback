@@ -41,7 +41,7 @@ export default {
                 formData.append('username', this.input.username);
                 formData.append('password', this.input.password);
 
-                let url = `./includes/index.php`;
+                let url = `./includes/index.php/?username=true`;
 
                 fetch(url, {
                     method: 'POST',
