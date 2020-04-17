@@ -16,33 +16,21 @@
         return $result;
     }
 
-    function getUsers($conn) {
-
-        $getUsersQuery = 'SELECT * FROM tbl_users';
-        $runQuery = $conn->query($getUsersQuery);
-
-        $result = array();
-
-        while($row = $runQuery->fetch(PDO::FETCH_ASSOC)) {
-            $result[] = $row;
+    function getMoviesByFilter($conn, $args) {
+        $filter_query = 'SELECT * FROM ' . $args['tbl'] . ' AS t, ' . $args['tbl2'] . ' AS t2, ' . $args['tbl3'] . ' AS t3';
+        $filter_query .= ' WHERE t.' . $args['col'] . ' = t3.' . $args['col'];
+        $filter_query .= ' AND t2.' . $args['col2'] . ' = t3.' . $args['col2'];
+        $filter_query .= ' AND t2.' . $args['col3'] . ' = "' . $args['filter'] . '"';
+        
+        $results = $conn->query($filter_query);
+        
+        //echo $filter_query;
+        
+        if($results) {
+            return $results->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            return 'Something went wrong!';
         }
-
-        return $result;
-    }
-
-
-    function getMovies($conn) {
-
-        $getMoviesQuery = 'SELECT * FROM tbl_movies';
-        $runQuery = $conn->query($getMoviesQuery);
-
-        $result = array();
-
-        while($row = $runQuery->fetch(PDO::FETCH_ASSOC)) {
-            $result[] = $row;
-        }
-
-        return $result;
     }
 
     function login($conn, $username, $password){
@@ -95,8 +83,6 @@
                 ':username' => $username,
             )
         );
-
-        
     
         if($user_set->fetchColumn()>0) {
             return 'This username is already taken!';

@@ -3,11 +3,6 @@ import MediaNav from './MediaNav.js'
 
 export default {
     name: 'dashboardfilm',
-    
-    // props: {
-    //     poster: String,
-    //     title: String
-    // },
 
     template: `
         <section class="film-comp-wrapper">

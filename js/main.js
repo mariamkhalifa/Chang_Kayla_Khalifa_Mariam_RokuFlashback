@@ -56,7 +56,9 @@ import router from './components/Router.js'
         this.burger.isExpanded = (this.burger.isExpanded) ? false : true;
       },
 
-        
+      navigateTo() {
+        this.burger.isExpanded = false;
+      }
     },
 
     router

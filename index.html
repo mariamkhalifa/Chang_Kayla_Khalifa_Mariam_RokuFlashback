@@ -29,23 +29,23 @@
           <span class="nav-link">Close</span>
         </div>
         
-        <li v-if="authenticated">
+        <li v-if="authenticated" @click="navigateTo">
           <router-link :to="{ name: 'userhome' }" class="link">
             <i class="fas fa-home"></i>
             <span class="nav-link">Home</span>
           </router-link>
         </li>
-        <li v-if="admin">
+        <li v-if="admin" @click="navigateTo">
           <router-link :to="{ name: 'userprofile' }" class="link">
             <i class="fas fa-user"></i>
             <span class="nav-link">Profile</span>
           </router-link>
         </li>
-        <li>
-          <a href="#" class="link">
+        <li @click="navigateTo">
+          <router-link :to="{ name: 'search' }" class="link">
             <i class="fas fa-search"></i>
             <span class="nav-link">Search</span>
-          </a>
+          </router-link>
         </li>
         <li v-if="admin">
           <a href="#" class="link">

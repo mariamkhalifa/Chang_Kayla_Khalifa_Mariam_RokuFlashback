@@ -49,14 +49,14 @@ export default {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
+                        //console.log(data);
                         if (typeof data != "object") { // means that we're not getting a user object back
                             //console.warn(data);
                             this.formmsg = "This user doesn't exist!";
                             this.input.username = "";
                             this.input.password = "";
                         } else {
-                            console.log('here!');
+                            //console.log('here!');
                             this.$emit('authenticated', true, data);
                             this.$router.push({ name: 'users' });
                         }
