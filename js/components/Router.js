@@ -19,9 +19,9 @@ routes: [
     { path: '/search', name: "search", component: SearchComponent },
     { path: '/filterresult', name: "filterresult", component: FilterResultComponent, props: true },
     { path: '/adduser', name: "adduser", component: AddUserComponent },
-    { path: '/dashboardfilm', name: "dashboardfilm", component: DashboardFilmComponent },
-    { path: '/dashboardtv', name: "dashboardtv", component: DashboardTVComponent },
-    { path: '/dashboardmusic', name: "dashboardmusic", component: DashboardMusicComponent },
+    { path: '/dashboardfilm', name: "dashboardfilm", component: DashboardFilmComponent, props: true },
+    { path: '/dashboardtv', name: "dashboardtv", component: DashboardTVComponent, props: true },
+    { path: '/dashboardmusic', name: "dashboardmusic", component: DashboardMusicComponent, props: true },
     { path: '/mediainfo', name: "mediainfo", component: MediaInfoComponent, props: true },
 ]
 });

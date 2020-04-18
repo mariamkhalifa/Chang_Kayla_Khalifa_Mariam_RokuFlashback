@@ -123,3 +123,26 @@
             return 'Something went wrong!';
         }
     }
+
+    function addComment($conn, $user_id, $comment) {
+        date_default_timezone_set("America/New_York");
+        $time = date('h:i a');
+        
+        $add_comment_query = 'INSERT INTO tbl_comments (user_id, comment, time) VALUES (:user_id, :comment, :time)';
+        $run_query = $conn->prepare($add_comment_query);
+        $add_comment_result = $run_query->execute(
+            array(
+                ':user_id' => $user_id,
+                ':comment' => $comment,
+                ':time' => $time
+            )
+        );
+
+        //echo($add_comment_query);
+
+        if($add_comment_result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
