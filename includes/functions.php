@@ -105,3 +105,21 @@
             }
         }
     }
+
+    function getComments($conn, $tbl1, $tbl2) {
+        //$get_comments_query = 'SELECT * FROM ' . $tbl;
+        //$comments_result = $conn->query($get_comments_query);
+
+        $get_comments_query = 'SELECT * FROM ' . $tbl1 . ' AS t1, ' . $tbl2 . ' AS t2';
+        $get_comments_query .= ' WHERE t1.user_id = t2.user_id';
+
+        //echo $get_comments_query;
+
+        $results = $conn->query($get_comments_query);
+
+        if($results) {
+            return $results->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            return 'Something went wrong!';
+        }
+    }

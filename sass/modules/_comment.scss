@@ -1,0 +1,65 @@
+.comment-card {
+    background-color: white;
+    @include row;
+    justify-content: space-between;
+    padding: 30px 20px;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 20px;
+    margin-top: 40px;
+}
+
+.comment-avatar {
+    width: 25%;
+    height: 70px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    align-self: center;
+}
+
+.comment-middle {
+    @include col;
+    color: black;
+    width: 60%;
+    margin-left: 20px;
+}
+
+.comment-name {
+    font-weight: bold;
+}
+
+.comment-text {
+    margin-top: 20px;
+}
+
+.like-icons {
+    margin-top: 20px;
+    @include row;
+    align-items: center;
+}
+
+.fa-thumbs-up {
+    color: black; 
+    font-size: .9em;
+    cursor: pointer;
+}
+
+.fa-thumbs-down {
+    color: black; 
+    font-size: .9em;
+    margin-left: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.likes-count {
+    color: $orange; 
+    font-size: .9em; 
+    margin-left: 10px;
+}
+
+.comment-time {
+    color: $orange;
+    font-size: .7em;
+}

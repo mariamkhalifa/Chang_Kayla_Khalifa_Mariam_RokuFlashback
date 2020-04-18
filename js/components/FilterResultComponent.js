@@ -18,12 +18,6 @@ export default {
         
         <div v-if="results" class="filter-poster-wrapper">
 
-            <!-- <li v-for="(item, index) in currentfilterresult"
-            class="filter-poster" @click="chooseMedia"
-            :currentmedia="item" :key="index">
-                <img :src="'images/' + item.poster" alt="item.title">
-            </li> -->
-
             <media v-for="(item, index) in currentfilterresult"
             :livemedia="item" :key="index"/>
 
@@ -52,11 +46,6 @@ export default {
     methods: {
         navToSearch() {
             this.$router.push({ name: 'search' });
-        },
-
-        chooseMedia() {
-            //this.$router.push({ name: 'mediainfo', params: { currentmedia: this.item }});
-            console.log(this.currentfilterresult.currentmedia);
         }
     },
 

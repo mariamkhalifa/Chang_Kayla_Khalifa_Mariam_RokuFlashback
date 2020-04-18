@@ -1,6 +1,4 @@
 export default {
-    name: 'film',
-
     props: ['livemedia'],
 
     template: `
