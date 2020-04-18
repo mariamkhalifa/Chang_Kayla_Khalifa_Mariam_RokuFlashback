@@ -48,9 +48,8 @@ export default {
 
     methods: {
         fetchMovies() {
-            //console.log('fetch movies here');
-
-            const url = './includes/index.php?movies=true';
+            let permissions = this.currentuser.permissions,
+                url = `./includes/index.php?permissions=${permissions}&media=film`;
 
             fetch(url)
             .then(res => res.json())

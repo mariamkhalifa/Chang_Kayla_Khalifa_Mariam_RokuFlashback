@@ -46,9 +46,8 @@ export default {
 
     methods: {
         fetchTv() {
-            //console.log('fetch movies here');
-
-            const url = './includes/index.php?tv=true';
+            let permissions = this.currentuser.permissions,
+                url = `./includes/index.php?permissions=${permissions}&media=tv`;
 
             fetch(url)
             .then(res => res.json())

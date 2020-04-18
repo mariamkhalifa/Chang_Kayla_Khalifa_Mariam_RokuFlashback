@@ -33,6 +33,22 @@
         }
     }
 
+    function getMoviesByAge($conn, $args) {
+        $get_movies_query = 'SELECT * FROM ' . $args['tbl1'] . ' AS t1, ' . $args['tbl2'] . ' AS t2, ' .  $args['tbl3'] . ' AS t3' ;
+        $get_movies_query .= ' WHERE t1.' . $args['col1'] . ' = t3.' . $args['col1'] . ' AND t2.' . $args['col2'] . ' = t3.' . $args['col2'] ;
+        $get_movies_query .= ' AND t2.' . $args['col2'] . ' <= ' . $args['permissions'] . ' AND t1.' . $args['type'] . ' = "' . $args['media_type'] . '"';
+
+        //echo $get_movies_query;
+
+        $results = $conn->query($get_movies_query);
+
+        if($results) {
+            return $results->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            return 'Something went wrong!';
+        }
+    }
+
     function login($conn, $username, $password){
         //Check existance
         $check_exist_query = 'SELECT COUNT(*) FROM tbl_users WHERE username= :username';
