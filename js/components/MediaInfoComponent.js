@@ -1,3 +1,5 @@
+import CommnetComponent from "./CommnetComponent.js";
+
 export default {
     name: 'mediainfo',
 
@@ -61,11 +63,42 @@ export default {
 
             <ul class="comments">
                 <h4>Comments</h4>
+
+                <comment v-for="(comment, index) in comments"
+                :comment="comment" :key="index"/>
                 
             </ul>
 
         </div>
 
     </section>
-    `
+    `,
+
+    components: {
+        comment: CommnetComponent
+    },
+
+    data() {
+        return {
+            comments: []
+        }
+    },
+
+    created() {
+        this.fetchComments();
+    },
+
+    methods: {
+        fetchComments() {
+            let url = './includes/index.php?comments=true';
+
+            fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                this.comments = data;
+            })
+            .catch((err) => console.log(err))
+        }
+    }
 }
