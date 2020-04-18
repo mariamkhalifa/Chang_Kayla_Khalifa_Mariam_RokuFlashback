@@ -1,6 +1,6 @@
 # Roku Flashback
 
-<img src="/images/roku.svg" alt="Roku Flashback Logo" width="200">
+<img src="/images/flashback.svg" alt="Roku Flashback Logo" width="200">
 
 ## Retro Streaming Service
 
@@ -23,6 +23,8 @@ respectively.
 * **Kayla** - *Designer* - https://github.com/kchang00
 * **Mariam** - *Developer* - https://github.com/mariamkhalifa
 
-## Acknowledgment/References
+## Credits
 
-None of the entertainment assets are our own (including TV cover art, album art, videos, audio).
+* None of the entertainment assets are our own (including TV cover art, album art, videos, audio). All rights go to their respective owners
+* Genre icons by Icons8 (www.icons8.com)
+
