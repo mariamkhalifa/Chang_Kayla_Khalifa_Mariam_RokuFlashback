@@ -1,0 +1,24 @@
+.add-comment-label {
+    margin-top: 10px;
+}
+
+.comment-input-submit {
+    @include row;
+}
+
+#comment {
+    font-size: .9em;
+    padding: 5px;
+    margin-right: 10px;
+    border: none;
+    border-bottom: black solid 1px;
+}
+
+.add-comment-submit {
+    color: $orange;
+    padding: 0;
+    margin: 0;
+    margin-right: 10px;
+    align-self: flex-end;
+    width: auto;
+}

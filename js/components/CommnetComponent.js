@@ -6,7 +6,7 @@ export default {
             <img class="comment-avatar avatar" :src="'images/' + comment.avatar">
             <div class="comment-middle">
                 <p class="comment-name">{{ comment.username }}</p>
-                <p class="comment-text">{{ comment.copy }}</p>
+                <p class="comment-text">{{ comment.comment }}</p>
                 <div class="like-icons">
                     <div @click="incrementLikes"><i class="fas fa-thumbs-up"></i></div>
                     <p class="likes-count">{{ count.likes }}</p>
@@ -15,7 +15,7 @@ export default {
                 </div>
             </div>
             <div class="comment-time">
-                <p>{{ comment.date }}</p>
+                <p>{{ comment.time }}</p>
             </div>
         </li>
     `,

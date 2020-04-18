@@ -2,7 +2,9 @@ import MediaComponent from './MediaComponent.js'
 import MediaNav from './MediaNav.js'
 
 export default {
-    name: 'dashboardtv',
+    name: 'dashboardmusic',
+
+    props: ['currentuser'],
 
     template: `
         <section class="film-comp-wrapper">
@@ -14,7 +16,7 @@ export default {
                 </div>
                 <div class="films-wrapper">
                     <music v-for="(track, index) in music" 
-                    :livemedia="track" :key="index"/>
+                    :livemedia="track" :key="index" :currentuser="currentuser"/>
                 </div>
             </section>
 
@@ -24,11 +26,11 @@ export default {
                 </div>
                 <div class="films-wrapper">
                     <music v-for="(track, index) in music" 
-                    :livemedia="track" :key="index"/>
+                    :livemedia="track" :key="index" :currentuser="currentuser"/>
                 </div>
             </section>
 
-            <medianav/>
+            <medianav @getUser="setUser"/>
         </section>
     `,
 
@@ -51,7 +53,7 @@ export default {
             fetch(url)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                //console.log(data);
                 this.music = data;
             })
             .catch((err) => console.log(err))

@@ -1,9 +1,10 @@
 import CommnetComponent from "./CommnetComponent.js";
+import AddCommentComponent from "./AddCommentComponent.js";
 
 export default {
     name: 'mediainfo',
 
-    props: ['currentmedia'],
+    props: ['currentmedia', 'currentuser'],
 
     template: `
     <section class="media-details-wrapper">
@@ -64,6 +65,8 @@ export default {
             <ul class="comments">
                 <h4>Comments</h4>
 
+                <addcomment :currentuser="currentuser"/>
+
                 <comment v-for="(comment, index) in comments"
                 :comment="comment" :key="index"/>
                 
@@ -75,7 +78,8 @@ export default {
     `,
 
     components: {
-        comment: CommnetComponent
+        comment: CommnetComponent,
+        addcomment: AddCommentComponent
     },
 
     data() {

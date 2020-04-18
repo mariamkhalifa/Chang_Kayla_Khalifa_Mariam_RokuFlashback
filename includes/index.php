@@ -60,6 +60,12 @@
         $result = getComments($pdo, $tbl_comments, $tbl_users);
     }
 
+    if(isset($_GET['add_comment'])) {
+        $user_id = $_GET['user_id'];
+        $comment = trim($_POST['comment']);
+        $result = addComment($pdo, $user_id, $comment);
+    }
+
     if(isset($_GET['add_user'])) {
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);

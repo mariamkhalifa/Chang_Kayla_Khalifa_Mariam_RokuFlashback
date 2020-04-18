@@ -16,12 +16,13 @@ export default {
             <img class="user-home-avatar avatar" :src="'images/' + currentuser.avatar" alt="user avatar">
         </div>
 
-        <medianav/>
+        <medianav :currentuser="currentuser"/>
 
     </section>
     `,
 
     components: {
         medianav: MediaNav
-    }
+    },
+
 }

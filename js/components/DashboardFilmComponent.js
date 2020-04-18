@@ -4,6 +4,8 @@ import MediaNav from './MediaNav.js'
 export default {
     name: 'dashboardfilm',
 
+    props: ['currentuser'],
+
     template: `
         <section class="film-comp-wrapper">
             <h2 class="sr-only">Film Dashboard</h2>
@@ -15,7 +17,7 @@ export default {
                 </div>
                 <div class="films-wrapper">
                     <film v-for="(movie, index) in movies" 
-                    :livemedia="movie" :key="index"/>
+                    :livemedia="movie" :key="index" :currentuser="currentuser"/>
                 </div>
             </section>
 
@@ -26,7 +28,7 @@ export default {
                 </div>
                 <div class="films-wrapper">
                     <film v-for="(movie, index) in movies" 
-                    :livemedia="movie" :key="index"/>
+                    :livemedia="movie" :key="index" :currentuser="currentuser"/>
                 </div>
             </section>
 
@@ -53,7 +55,7 @@ export default {
             fetch(url)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                //console.log(data);
                 this.movies = data;
             })
             .catch((err) => console.log(err))
