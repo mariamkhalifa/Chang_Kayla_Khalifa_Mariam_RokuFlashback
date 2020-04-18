@@ -1,8 +1,9 @@
 export default {
-    props: ['name', 'table', 'genre'],
+    props: ['name', 'table', 'genre', 'icon'],
 
     template: `
-        <li>
+        <li class="genre-icon">
+            <img :src="'images/' + icon" :alt="icon">
             <a :href="name" @click.prevent="filter" ref="filter">{{ name }}</a>
         </li>
     `,
@@ -18,7 +19,7 @@ export default {
             let filter = this.$refs.filter.getAttribute('href'),
                 tbl = this.table,
                 genre = this.genre,
-                url = `./includes/index.php?media=${tbl}&genre=${genre}&filter=${filter}`;
+                url = `./includes/index.php?media_tbl=${tbl}&genre=${genre}&filter=${filter}`;
             
             fetch(url)
             .then(res => res.json())

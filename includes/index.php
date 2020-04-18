@@ -17,8 +17,8 @@
         $result = getAll($pdo, $tbl_audio_genre);
     }
 
-    if(isset($_GET['media'])) {
-        $tbl = trim($_GET['media']);
+    if(isset($_GET['media_tbl'])) {
+        $tbl = trim($_GET['media_tbl']);
     }
 
     if(isset($_GET['genre'])) {

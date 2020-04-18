@@ -4,18 +4,16 @@ export default {
     name: 'search',
 
     template: `
-    <section>
+    <section class="genres-wrapper">
         <h2 class="sr-only">Search</h2>
-
-        <ul>
-            <h3>Movie Genres</h3>
-            <genre v-for="(genre, index) in genrelist" 
-            :name="genre.genre_name" :table="movies" :genre="video" :key="index"/>
+        <h3 class="genre-title">Movie Genres</h3>
+        <ul class="genre-grid">
+            <genre v-for="(genre, index) in genrelist" :icon="genre.genre_icon"
+            :name="genre.genre_name" :table="media" :genre="video" :key="index"/>
         </ul>
-
-        <ul>
-            <h3>Music Genres</h3>
-            <genre v-for="(genre, index) in musicgenrelist" 
+        <h3 class="genre-title">Music Genres</h3>
+        <ul class="genre-grid">
+            <genre v-for="(genre, index) in musicgenrelist" :icon="genre.genre_icon"
             :name="genre.genre_name" :genre="audio" :table="music" :key="index"/>
         </ul>
     </section>
@@ -25,7 +23,7 @@ export default {
         return {
             genrelist: [],
             musicgenrelist: [],
-            movies: 'movies',
+            media: 'media',
             music: 'music',
             video: 'video',
             audio: 'audio',
