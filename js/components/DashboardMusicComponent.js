@@ -30,7 +30,7 @@ export default {
                 </div>
             </section>
 
-            <medianav @getUser="setUser"/>
+            <medianav/>
         </section>
     `,
 

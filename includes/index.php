@@ -39,10 +39,10 @@
         $result = getMoviesByFilter($pdo, $args);
     }
 
-    if(isset($_GET['movies'])) {
-        $tbl_movies = 'tbl_movies';
-        $result = getAll($pdo, $tbl_movies);
-    }
+    // if(isset($_GET['movies'])) {
+    //     $tbl_movies = 'tbl_movies';
+    //     $result = getAll($pdo, $tbl_movies);
+    // }
 
     if(isset($_GET['tv'])) {
         $tbl_tv = 'tbl_tv';
@@ -52,6 +52,21 @@
     if(isset($_GET['music'])) {
         $tbl_music = 'tbl_music';
         $result = getAll($pdo, $tbl_music);
+    }
+
+    if(isset($_GET['media'])) {
+        $args = array(
+            'tbl1' => 'tbl_media',
+            'tbl2' => 'tbl_arating',
+            'tbl3' => 'tbl_media_arating',
+            'col1' => 'media_id',
+            'col2' => 'arating_id',
+            'type' => 'type',
+            'media_type' => $_GET['media'],
+            'permissions' => $_GET['permissions']
+        );
+        
+        $result = getMoviesByAge($pdo, $args);
     }
 
     if(isset($_GET['comments'])) {
