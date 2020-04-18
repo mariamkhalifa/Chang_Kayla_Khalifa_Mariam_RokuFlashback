@@ -52,6 +52,16 @@ export default {
                 <label for="add-password" class="sr-only">password</label>
                 <input v-model="input.password" id="add-password" name="password" type="text" value="" placeholder="Password" required>
                 
+                <label for="add-permissions" class="sr-only">Permissions</label>
+                <input v-model="input.permissions" id="add-permissions" list="permissionslist" value="" name="permissions" placeholder="Age Rating" required>
+                    <datalist id="permissionslist">
+                        <option value="1">G</option>
+                        <option value="2">PG</option>
+                        <option value="3">PG-13</option>
+                        <option value="4">R</option>
+                        <option value="5">NC-17</option>
+                    </datalist>
+
                 <label for="add-role" class="sr-only">Role</label>
                 <input v-model="input.role" id="add-role" list="roleslist" value="" name="role" placeholder="Role" required>
                     <datalist id="roleslist">
@@ -90,14 +100,13 @@ export default {
 
     methods: {
         addUser() {
-            console.log('add user');
-
-            if (this.input.username !== "" && this.input.password !== "" && this.input.role !== "") {
+            if (this.input.username !== "" && this.input.password !== "" && this.input.permissions !== "" && this.input.role !== "") {
                 let formData = new FormData();
 
                 formData.append('avatar', this.input.avatar);
                 formData.append('username', this.input.username);
                 formData.append('password', this.input.password);
+                formData.append('permissions', this.input.permissions);
                 formData.append('role', this.input.role);
 
                 let url = `./includes/index.php?add_user=true`;
@@ -108,12 +117,12 @@ export default {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
+                        //console.log(data);
                         if (data == true) { 
-                            console.log('here!');
+                            //console.log('here!');
                             this.$router.push({ name: 'users' });
                         } else {
-                            this.formmsg = data;
+                            this.formmsg = "Something went wrong!";
                             // this.input.username = "";
                             // this.input.password = "";
                         }

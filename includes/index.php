@@ -85,9 +85,10 @@
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
         $avatar = trim($_POST['avatar']);
+        $permissions = trim($_POST['permissions']);
         $role = trim($_POST['role']);
 
-        $result = addUser($pdo, $username, $password, $avatar, $role);
+        $result = addUser($pdo, $username, $password, $avatar, $permissions, $role);
     }
 
     if(isset($_GET['username'])){
