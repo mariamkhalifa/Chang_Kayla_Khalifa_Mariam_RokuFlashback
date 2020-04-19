@@ -35,20 +35,11 @@ export default {
 
             <div v-if="currentmedia.audio" class="music-genre-card genre-card"><p>{{ musicgenre.genre_name }}</p></div>
             
-            <form class="rate-form">
-                <label for="rating">Rate</label>
-                <div>
-                    <select id="rating">
-                        <option value="">--Select a rating--</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                    <input class="rate-submit" type="submit" value="Submit">
-                </div>
-            </form>
+            <div class="media-rating">
+                <h4>Rating</h4>
+                <p>{{ currentmedia.rating }}</p>
+                <img class="star-icon" src="images/icon_star.svg" alt="star">
+            </div>
 
             <div class="share-btns">
                 <h4>Share</h4>

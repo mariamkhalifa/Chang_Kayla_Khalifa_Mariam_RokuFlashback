@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="71" height="71" viewBox="0 0 71 71">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fcf0e4;
+      }
+
+      .cls-2 {
+        fill: #e25d34;
+      }
+
+      .cls-3 {
+        filter: url(#bg);
+      }
+    </style>
+    <filter id="bg" x="0" y="0" width="71" height="71" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-opacity="0.114"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="icon_star" transform="translate(14.629 11.501)">
+    <g class="cls-3" transform="matrix(1, 0, 0, 1, -14.63, -11.5)">
+      <circle id="bg-2" data-name="bg" class="cls-1" cx="20.5" cy="20.5" r="20.5" transform="translate(15 12)"/>
+    </g>
+    <path id="Icon_material-stars" data-name="Icon material-stars" class="cls-2" d="M23.22,3A20.24,20.24,0,1,0,43.48,23.24,20.23,20.23,0,0,0,23.22,3ZM31.8,35.384,23.24,30.223l-8.562,5.161,2.267-9.735L9.4,19.111l9.958-.85L23.24,9.072l3.886,9.169,9.958.85-7.55,6.538L31.8,35.384Z" transform="translate(-2.912 -2.384)"/>
+  </g>
+</svg>

@@ -79,6 +79,21 @@
         }
     }
 
+    function getStarRating($conn, $args) {
+        $get_stars_query = 'SELECT * FROM ' . $args['tbl1'] . ' AS t1, ' . $args['tbl2'] . ' AS t2';
+        $get_stars_query .=	' WHERE t1.' . $args['col1'] . ' = ' . $args['id'] . ' AND t1.' . $args['col2'] . ' = t2.' . $args['col2'];
+
+        //echo $get_stars_query;
+
+        $results = $conn->query($get_stars_query);
+
+        if($results) {
+            return $results->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            return 'Something went wrong!';
+        }
+    }
+
     function login($conn, $username, $password){
         //Check existance
         $check_exist_query = 'SELECT COUNT(*) FROM tbl_users WHERE username= :username';

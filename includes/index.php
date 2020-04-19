@@ -88,6 +88,18 @@
         $result = getAgeRating($pdo, $args);
     }
 
+    if(isset($_GET['current_star_rating'])) {
+        $tbl = trim($_GET['tbl']);
+        $args = array(
+            'tbl1' => 'tbl_' . $tbl . '_star_rating',
+            'tbl2' => 'tbl_star_rating',
+            'col1' => $tbl .'_id',
+            'col2' => 'star_rating_id',
+            'id' => $_GET['current_star_rating']
+        );
+        $result = getStarRating($pdo, $args);
+    }
+
     if(isset($_GET['comments'])) {
         $tbl_comments = 'tbl_comments';
         $tbl_users = 'tbl_users';
