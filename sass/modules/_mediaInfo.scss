@@ -60,30 +60,21 @@
     margin-top: 20px;
 }
 
-.rate-form {
+.media-rating {
+    @include row;
+    align-items: center;
     margin-top: 30px;
-    label {
-        font-weight: bold;
-    }
-    select {
-        border: .5px $orange solid;
-        padding: 5px;
-        background-color: $grey;
-        color: white;
-    }
-    input { 
-        width: 50px;
-        font-size: .8em;
-        background-color: $orange;
-        border: none;
-        color: white;
-        height: 20px;
-        border-radius: 5px;
-    }
+    h4 { font-weight: bold; }
+    p { margin-left: 20px; }
+}
+
+.star-icon {
+    margin-left: 5px;
+    width: 40px;
 }
 
 .share-btns {
-    margin-top: 20px;
+    margin-top: 30px;
     h4 { font-weight: bold; }
 }
 
