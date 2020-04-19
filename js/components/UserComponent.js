@@ -5,7 +5,7 @@ export default {
 
     template: `
     <li>
-        <div @click="navToUserHome"><img class="avatar" :src="'images/' + liveuser.avatar" alt="user avatar"></div>
+        <div @click="navToUserHome"><img class="users-avatar avatar" :src="'images/' + liveuser.avatar" alt="user avatar"></div>
         <div @click="navToUserHome" class="user-name"><h4>{{liveuser.username}}</h4></div>
         <div @click="navToUserHome" class="user-arrow"><i class="fas fa-arrow-right"></i></div>
     </li>
@@ -21,6 +21,7 @@ export default {
         navToUserHome() {
             localStorage.setItem('cachedUser', JSON.stringify(this.liveuser));
             this.$router.push({ name: 'userhome', params: { currentuser: this.liveuser }});
+            window.scrollTo(0,0);
         }
     }
 }

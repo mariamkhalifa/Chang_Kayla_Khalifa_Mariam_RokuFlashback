@@ -3,7 +3,7 @@
     @include row;
     justify-content: space-evenly;
     li {
-        transition: all 1s ease;
+        transition: all .5s ease;
         padding: 25px 0;
         background-color: #666;
         width: 33.333%;
@@ -17,11 +17,7 @@
             margin-top: 8px;
         }
     }
-    li:hover {
-        opacity: .5;
-        border: white 1px solid;
-    }
-    li:active {
-        border: white 1px solid;
+    li:hover, li:focus {
+        background-color: $orange;
     }
 }

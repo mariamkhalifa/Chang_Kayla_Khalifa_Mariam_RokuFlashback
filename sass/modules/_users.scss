@@ -15,15 +15,31 @@
     li {
         margin-top: 40px;
         @include row;
-        img {
-            width: 40em;
-            height: 10em;
-        }
     }
 }
 
-.add-user-icon {
-    background-color: rgba($color: white, $alpha: 0) !important;
+.users-avatar {
+    width: 40em;
+    height: 10em;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.users-avatar:hover, .users-avatar:focus,
+.create-user-avatar:hover, .create-user-avatar:focus {
+    border: 3px solid $orange;
+    border-bottom: 10px solid $orange;
+}
+
+.create-user-avatar {
+    cursor: pointer;
+    transition: all .5s ease;
+    border: 3px solid black;
+    border-bottom: 10px solid black;
+    border-radius: 10px;
+    width: 40em;
+    height: 10em;
+    background-color: $grey;
 }
 
 .user-name {
@@ -32,12 +48,24 @@
     text-transform: uppercase;
     font-family: $Breamcatcher;
     font-size: 3em;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.user-name:hover, .user-name:focus {
+    color: $orange;
 }
 
 .user-arrow {
     margin-left: auto;
     margin-right: 30px;
     align-self: center;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.user-arrow:hover, .user-arrow:focus {
+    color: $orange;
 }
 
 .user-plus {
@@ -52,26 +80,18 @@
     @include col;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    transition: all .5s ease;
     span {
         font-size: 1.5em;
         margin-top: 2px;
     }
 }
 
-// .logout-link {
-//     @include row;
-//     margin-top: 80px;
-//     margin-bottom: 40px;
-//     .fa-sign-out-alt {
-//         font-size: 1.2em;
-//     }
-//     .link {
-//         margin-left: 20px;
-//         text-transform: uppercase;
-//         font-size: .8em;
-//         align-self: center;
-//     }
-// }
+.user-plus:hover, .user-plus:focus {
+    color: $orange;
+    border: 1px solid $orange;
+}
 
 @media screen and (min-width: 450px) {
     .users-wrapper {

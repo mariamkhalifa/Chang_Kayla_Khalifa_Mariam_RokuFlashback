@@ -12,7 +12,6 @@
 .add-user-form {
     @include col;
     align-items: center;
-    margin-top: 100px;
     width: 100%;
     h3 {
         margin-top: 80px;
@@ -45,6 +44,12 @@
     width: 100%;
     height: 150px;
     cursor: pointer;
+    transition: all .5s ease;
+}
+
+.add-user-avatar:hover, .add-user-avatar:focus {
+    border: 3px solid $orange;
+    border-bottom: 10px solid $orange;
 }
 
 // .already-member {

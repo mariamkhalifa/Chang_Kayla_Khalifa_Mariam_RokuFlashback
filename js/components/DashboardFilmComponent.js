@@ -4,8 +4,6 @@ import MediaNav from './MediaNav.js'
 export default {
     name: 'dashboardfilm',
 
-    props: ['currentuser'],
-
     template: `
         <section class="film-comp-wrapper">
             <h2 class="sr-only">Film Dashboard</h2>
@@ -38,11 +36,16 @@ export default {
 
     data: function() {
         return {
-            movies: []
+            movies: [],
+            currentuser: []
         }
     },
 
     created: function() {
+        if(localStorage.getItem('cachedUser')) {
+            let user = JSON.parse(localStorage.getItem('cachedUser'));
+            this.currentuser = user;
+        }
         this.fetchMovies();
     },
 
@@ -54,7 +57,7 @@ export default {
             fetch(url)
             .then(res => res.json())
             .then(data => {
-                //console.log(data);
+                console.log(data);
                 this.movies = data;
             })
             .catch((err) => console.log(err))

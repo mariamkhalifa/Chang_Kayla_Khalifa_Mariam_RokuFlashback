@@ -1,0 +1,75 @@
+.genres-wrapper {
+    @include col;
+    align-items: center;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 40px;
+}
+
+.genre-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-top: 40px;
+    align-items: center;
+    grid-column-gap: 10vw;
+    grid-row-gap: 20px;
+}
+
+.genre-title {
+    margin-top: 60px;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.genre-icon {
+    //margin-top: 20px;
+    //margin-right: 10vw;
+    @include col;
+    align-items: center;
+    img {
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        border-radius: 130px;
+        background-color: white;
+        border: black 4px solid;
+        cursor: pointer;
+        transition: all .5s ease;
+    }
+    a { 
+        margin-top: 10px; 
+        max-width: 50px;
+        font-size: .9em;
+        cursor: pointer;
+        transition: all .5s ease;
+    }
+}
+
+.genre-icon:hover, .genre-icon:focus {
+    img { border: $orange 4px solid; background-color: $grey; }
+    a {color: $orange;}
+    
+}
+
+.genre-icon:last-of-type {
+    margin-right: 0;
+}
+
+@media screen and (min-width: 550px) {
+    .genre-grid {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .genre-grid {
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+
+@media screen and (min-width: 1020px) {
+    .genre-grid {
+        grid-template-columns: repeat(5,1fr);
+    }
+}

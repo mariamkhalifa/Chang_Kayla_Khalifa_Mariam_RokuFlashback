@@ -69,8 +69,8 @@
         transition: all ease .5s;
     }
     li:hover {
-        border: .5px solid rgba($color: #999, $alpha: .3);
-        transform: scale(1.05);
+        background-color: $orange;
+        transform: scale(1.1);
     }
     .nav-link {
         margin-left: 20px;

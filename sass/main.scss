@@ -95,10 +95,19 @@ input {
     padding: 20px 0;
     padding-left: 10px;
     width: 100%;
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+.button:hover, .button:focus {
+    //transform: scale(1.01);
+    background-color: $grey;
+    
 }
 
 .fill {
     background-color: $orange;
+    border: 4px solid $orange;
 }
 
 .border {
@@ -126,11 +135,13 @@ input {
     border-bottom: 10px solid black;
 }
 
+
 @import 'modules/_header';
 @import 'modules/_addUser';
 @import 'modules/_login';
 @import 'modules/_users';
 @import 'modules/_mediaNav';
+@import 'modules/_genreFilters';
 @import 'modules/_filterResults';
 @import 'modules/_userHome';
 @import 'modules/_dashboardFilm';

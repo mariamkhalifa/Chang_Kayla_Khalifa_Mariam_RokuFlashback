@@ -1,4 +1,4 @@
-import CommnetComponent from "./CommnetComponent.js";
+import CommnetComponent from "./CommentComponent.js";
 import AddCommentComponent from "./AddCommentComponent.js";
 
 export default {
@@ -29,11 +29,11 @@ export default {
             <p v-if="currentmedia.video" class="media-storyline">{{ currentmedia.storyline }}</p>
             
             <div v-if="currentmedia.video" class="genre-rating-wrapper">
-                <div class="genre-card"><p>Genre</p></div>
-                <div class="rating-card"><p>Rating</p></div>
+                <div v-for="(genre, index) in mediagenre" class="genre-card"><p>{{ genre.genre_name }}</p></div>
+                <div class="rating-card"><p>{{ mediaarating.name }}</p></div>
             </diV>
 
-            <div v-if="currentmedia.audio" class="genre-card"><p>Genre</p></div>
+            <div v-if="currentmedia.audio" class="music-genre-card genre-card"><p>{{ musicgenre.genre_name }}</p></div>
             
             <form class="rate-form">
                 <label for="rating">Rate</label>
@@ -84,15 +84,59 @@ export default {
 
     data() {
         return {
+            mediagenre: [],
+            musicgenre: '',
+            mediaarating: '',
             comments: []
         }
     },
 
     created() {
         this.fetchComments();
+        this.fetchGenre();
+        this.fetchAgeRating();
     },
 
     methods: {
+        fetchGenre() {
+            if(this.currentmedia.video) {
+                let id = this.currentmedia.media_id,
+                    url = `./includes/index.php?current_genre=${id}&tbl=media&genre=video`;
+
+                fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    //console.log(data);
+                    this.mediagenre = data;
+                })
+                .catch((err) => console.log(err))
+            } else {
+                let id = this.currentmedia.music_id,
+                    url = `./includes/index.php?current_genre=${id}&tbl=music&genre=audio`;
+
+                fetch(url)
+                .then(res => res.json())
+                .then(data => {
+                    //console.log(data);
+                    this.musicgenre = data[0];
+                })
+                .catch((err) => console.log(err))
+            }    
+        },
+
+        fetchAgeRating() {
+            let id = this.currentmedia.media_id,
+                url = `./includes/index.php?current_arating=${id}`;
+
+            fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                //console.log(data);
+                this.mediaarating = data[0];
+            })
+            .catch((err) => console.log(err)) 
+        },
+
         fetchComments() {
             let url = './includes/index.php?comments=true';
 

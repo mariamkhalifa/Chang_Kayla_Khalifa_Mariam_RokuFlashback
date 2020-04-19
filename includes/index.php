@@ -17,8 +17,8 @@
         $result = getAll($pdo, $tbl_audio_genre);
     }
 
-    if(isset($_GET['media'])) {
-        $tbl = trim($_GET['media']);
+    if(isset($_GET['media_tbl'])) {
+        $tbl = trim($_GET['media_tbl']);
     }
 
     if(isset($_GET['genre'])) {
@@ -44,11 +44,6 @@
     //     $result = getAll($pdo, $tbl_movies);
     // }
 
-    if(isset($_GET['tv'])) {
-        $tbl_tv = 'tbl_tv';
-        $result = getAll($pdo, $tbl_tv);
-    }
-
     if(isset($_GET['music'])) {
         $tbl_music = 'tbl_music';
         $result = getAll($pdo, $tbl_music);
@@ -69,6 +64,30 @@
         $result = getMoviesByAge($pdo, $args);
     }
 
+    if(isset($_GET['current_genre'])) {
+        $tbl = trim($_GET['tbl']);
+        $genre = trim($_GET['genre']);
+        $args = array(
+            'tbl1' => 'tbl_link_' . $tbl . '_genre',
+            'tbl2' => 'tbl_' . $genre . '_genre',
+            'col1' => $tbl . '_id',
+            'col2' => 'genre_id',
+            'id' => $_GET['current_genre']
+        );
+        $result = getCurrentGenre($pdo, $args);
+    }
+
+    if(isset($_GET['current_arating'])) {
+        $args = array(
+            'tbl1' => 'tbl_media_arating',
+            'tbl2' => 'tbl_arating',
+            'col1' => 'media_id',
+            'col2' => 'arating_id',
+            'id' => $_GET['current_arating']
+        );
+        $result = getAgeRating($pdo, $args);
+    }
+
     if(isset($_GET['comments'])) {
         $tbl_comments = 'tbl_comments';
         $tbl_users = 'tbl_users';
@@ -85,9 +104,10 @@
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
         $avatar = trim($_POST['avatar']);
+        $permissions = trim($_POST['permissions']);
         $role = trim($_POST['role']);
 
-        $result = addUser($pdo, $username, $password, $avatar, $role);
+        $result = addUser($pdo, $username, $password, $avatar, $permissions, $role);
     }
 
     if(isset($_GET['username'])){

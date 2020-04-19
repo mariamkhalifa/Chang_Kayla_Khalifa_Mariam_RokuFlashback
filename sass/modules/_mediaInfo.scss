@@ -40,7 +40,8 @@
 }
 
 .genre-card, .rating-card {
-    background-color: $orange;
+    background-color: $grey;
+    border: 1px solid $light-grey;
     width: 100px;
     height: 36px;
     @include col;
@@ -53,6 +54,10 @@
 
 .genre-card {
     margin-right: 10px;
+}
+
+.music-genre-card {
+    margin-top: 20px;
 }
 
 .rate-form {
