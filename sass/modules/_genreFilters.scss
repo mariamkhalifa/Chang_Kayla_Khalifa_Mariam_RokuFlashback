@@ -18,6 +18,8 @@
 .genre-title {
     margin-top: 60px;
     font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
 }
 
 .genre-icon {
@@ -25,8 +27,6 @@
     //margin-right: 10vw;
     @include col;
     align-items: center;
-    cursor: pointer;
-    transition: all .5s ease;
     img {
         width: 100px;
         height: 100px;
@@ -34,17 +34,22 @@
         border-radius: 130px;
         background-color: white;
         border: black 4px solid;
+        cursor: pointer;
+        transition: all .5s ease;
     }
     a { 
         margin-top: 10px; 
         max-width: 50px;
         font-size: .9em;
+        cursor: pointer;
+        transition: all .5s ease;
     }
 }
 
 .genre-icon:hover, .genre-icon:focus {
-    opacity: .8;
-    transform: scale(.99);
+    img { border: $orange 4px solid; background-color: $grey; }
+    a {color: $orange;}
+    
 }
 
 .genre-icon:last-of-type {

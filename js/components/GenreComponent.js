@@ -2,9 +2,9 @@ export default {
     props: ['name', 'table', 'genre', 'icon'],
 
     template: `
-        <li class="genre-icon">
+        <li @click.prevent="filter" class="genre-icon">
             <img :src="'images/' + icon" :alt="icon">
-            <a :href="name" @click.prevent="filter" ref="filter">{{ name }}</a>
+            <a :href="name" ref="filter">{{ name }}</a>
         </li>
     `,
 

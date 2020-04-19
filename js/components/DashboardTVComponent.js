@@ -4,8 +4,6 @@ import MediaNav from './MediaNav.js'
 export default {
     name: 'dashboardtv',
 
-    props: ['currentuser'],
-
     template: `
         <section class="film-comp-wrapper">
             <h2 class="sr-only">TV Dashboard</h2>
@@ -36,11 +34,16 @@ export default {
 
     data: function() {
         return {
-            tv: []
+            tv: [],
+            currentuser: []
         }
     },
 
     created: function() {
+        if(localStorage.getItem('cachedUser')) {
+            let user = JSON.parse(localStorage.getItem('cachedUser'));
+            this.currentuser = user;
+        }
         this.fetchTv();
     },
 

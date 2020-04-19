@@ -34,13 +34,43 @@
     }
 
     function getMoviesByAge($conn, $args) {
-        $get_movies_query = 'SELECT * FROM ' . $args['tbl1'] . ' AS t1, ' . $args['tbl2'] . ' AS t2, ' .  $args['tbl3'] . ' AS t3' ;
+        $get_movies_query = 'SELECT * FROM ' . $args['tbl1'] . ' AS t1, ' . $args['tbl2'] . ' AS t2, ' .  $args['tbl3'] . ' AS t3';
         $get_movies_query .= ' WHERE t1.' . $args['col1'] . ' = t3.' . $args['col1'] . ' AND t2.' . $args['col2'] . ' = t3.' . $args['col2'] ;
         $get_movies_query .= ' AND t2.' . $args['col2'] . ' <= ' . $args['permissions'] . ' AND t1.' . $args['type'] . ' = "' . $args['media_type'] . '"';
 
-        //echo $get_movies_query;
+        //echo $get_movies_query
 
         $results = $conn->query($get_movies_query);
+
+        if($results) {
+            return $results->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            return 'Something went wrong!';
+        }
+    }
+
+    function getCurrentGenre($conn, $args) {
+        $get_genre_query = 'SELECT * FROM ' . $args['tbl1'] . ' AS t1, ' . $args['tbl2'] . ' AS t2';
+        $get_genre_query .=	' WHERE t1.' . $args['col1'] . ' = ' . $args['id'] . ' AND t1.' . $args['col2'] . ' = t2.' . $args['col2'];
+
+        //echo $get_genre_query;
+
+        $results = $conn->query($get_genre_query);
+
+        if($results) {
+            return $results->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            return 'Something went wrong!';
+        }
+    }
+
+    function getAgeRating($conn, $args) {
+        $get_genre_query = 'SELECT * FROM ' . $args['tbl1'] . ' AS t1, ' . $args['tbl2'] . ' AS t2';
+        $get_genre_query .=	' WHERE t1.' . $args['col1'] . ' = ' . $args['id'] . ' AND t1.' . $args['col2'] . ' = t2.' . $args['col2'];
+
+        //echo $get_genre_query;
+
+        $results = $conn->query($get_genre_query);
 
         if($results) {
             return $results->fetchAll(PDO::FETCH_ASSOC);
@@ -124,9 +154,6 @@
     }
 
     function getComments($conn, $tbl1, $tbl2) {
-        //$get_comments_query = 'SELECT * FROM ' . $tbl;
-        //$comments_result = $conn->query($get_comments_query);
-
         $get_comments_query = 'SELECT * FROM ' . $tbl1 . ' AS t1, ' . $tbl2 . ' AS t2';
         $get_comments_query .= ' WHERE t1.user_id = t2.user_id';
 

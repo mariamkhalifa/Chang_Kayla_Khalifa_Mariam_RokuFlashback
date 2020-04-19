@@ -21,6 +21,7 @@ export default {
 
     data() {
         return {
+            currentuser: [],
             genrelist: [],
             musicgenrelist: [],
             media: 'media',
@@ -31,6 +32,10 @@ export default {
     },
 
     created() {
+        if(localStorage.getItem('cachedUser')) {
+            let user = JSON.parse(localStorage.getItem('cachedUser'));
+            this.currentuser = user;
+        }
         this.fetchMovieGenre();
         this.fetchMusicGenre();
     },
