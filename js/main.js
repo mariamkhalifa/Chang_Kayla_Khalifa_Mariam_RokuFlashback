@@ -36,6 +36,14 @@ import router from './components/Router.js'
         this.user = data;
       },
 
+      setRole(role) {
+        if(role == 1) {
+          this.admin = true;
+        } else {
+          this.kids = true;
+        }
+      },
+
       logout() {
         this.$router.push({ name: 'login' });
         this.authenticated = false;

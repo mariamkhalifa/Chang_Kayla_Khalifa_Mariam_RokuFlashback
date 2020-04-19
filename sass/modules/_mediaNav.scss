@@ -5,7 +5,7 @@
     li {
         transition: all .5s ease;
         padding: 25px 0;
-        background-color: #666;
+        background-color: $black;
         width: 33.333%;
         @include col;
         align-items: center;
