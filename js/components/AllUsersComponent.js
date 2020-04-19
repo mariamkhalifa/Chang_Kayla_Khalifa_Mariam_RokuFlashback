@@ -9,7 +9,7 @@ export default {
             <ul class="users">
                 <h3>Who's Watching?</h3>
 
-                <user v-for="(user, index) in users" :liveuser="user" :key="index" />
+                <user @roleset="setRole" v-for="(user, index) in users" :liveuser="user" :key="index" />
                 
                 <li>
                     <router-link :to="{ name: 'adduser' }"><img class="create-user-avatar" src="images/avatar5.svg" alt="add user icon"></router-link>
@@ -44,6 +44,10 @@ export default {
                 this.users = data;
             })
             .catch((err) => console.log(err))
+        },
+
+        setRole(role) {
+            this.$emit('roleset', role);
         }
     },
 

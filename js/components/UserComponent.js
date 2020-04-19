@@ -22,6 +22,7 @@ export default {
             localStorage.setItem('cachedUser', JSON.stringify(this.liveuser));
             this.$router.push({ name: 'userhome', params: { currentuser: this.liveuser }});
             window.scrollTo(0,0);
+            this.$emit('roleset', this.liveuser.role);
         }
     }
 }

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Roku FlashBack</title>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://use.typekit.net/its0ltk.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/main.css">
@@ -78,7 +79,7 @@
       </ul>
     </header>
   
-    <router-view @authenticated="setAuthenticated"/>
+    <router-view @authenticated="setAuthenticated" @roleset="setRole"/>
   </main>
 
   <footer>
